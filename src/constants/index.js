@@ -39,36 +39,36 @@ import {
 export const navigation = [
   {
     id: "0",
-    title: "Features",
-    url: "#features",
+    title: "About",
+    url: "#about-me",
   },
   {
     id: "1",
-    title: "Pricing",
-    url: "#pricing",
+    title: "Skills",
+    url: "#skills",
   },
   {
     id: "2",
-    title: "How to use",
-    url: "#how-to-use",
+    title: "Projects",
+    url: "#projects",
   },
   {
     id: "3",
-    title: "Roadmap",
-    url: "#roadmap",
+    title: "Experience",
+    url: "#experience",
   },
-  {
-    id: "4",
-    title: "New account",
-    url: "#signup",
-    onlyMobile: true,
-  },
-  {
-    id: "5",
-    title: "Sign in",
-    url: "#login",
-    onlyMobile: true,
-  },
+  // {
+  //   id: "4",
+  //   title: "New account",
+  //   url: "#signup",
+  //   onlyMobile: true,
+  // },
+  // {
+  //   id: "5",
+  //   title: "Sign in",
+  //   url: "#login",
+  //   onlyMobile: true,
+  // },
 ];
 
 export const heroIcons = [homeSmile, file02, searchMd, plusSquare];
@@ -130,21 +130,11 @@ export const roadmap = [
 export const collabText =
   "With smart automation and top-notch security, it's the perfect solution for teams looking to work smarter.";
 
-export const collabContent = [
-  {
-    id: "0",
-    title: "Seamless Integration",
-    text: collabText,
-  },
-  {
-    id: "1",
-    title: "Smart Automation",
-  },
-  {
-    id: "2",
-    title: "Top-notch Security",
-  },
-];
+  export const collabContent = [
+    { id: "0", title: "CI/CD Pipelines", text: collabText },
+    { id: "1", title: "Infrastructure as Code" },
+    { id: "2", title: "Monitoring and Logging" },
+  ];
 
 export const collabApps = [
   {

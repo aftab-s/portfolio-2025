@@ -128,12 +128,14 @@ export const roadmap = [
 ];
 
 export const collabText =
-  "With smart automation and top-notch security, it's the perfect solution for teams looking to work smarter.";
-
+"Driven by curiosity and a desire to learn, constantly seeking to improve and innovate."
   export const collabContent = [
-    { id: "0", title: "CI/CD Pipelines", text: collabText },
-    { id: "1", title: "Infrastructure as Code" },
-    { id: "2", title: "Monitoring and Logging" },
+  
+    { id: "0", title: "Infrastructure as Code" },
+    { id: "1", title: "Monitoring and Logging" },
+    { id: "2", title: "Cloud Architecture" },
+    { id: "3", title: "CI/CD Pipelines" },
+    { id: "3", title: "Design" },
   ];
 
 export const collabApps = [

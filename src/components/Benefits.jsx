@@ -4,16 +4,13 @@ import Section from "./Section";
 import Arrow from "../assets/svg/Arrow";
 import { GradientLight } from "./design/Benefits";
 import ClipPath from "../assets/svg/ClipPath";
+import Button from "./Button";
 
 const Benefits = () => {
   return (
     <Section id="features">
       <div className="container relative z-2">
-        <Heading
-          className="md:max-w-md lg:max-w-2xl"
-          title="Chat Smarter, Not Harder with Brainwave"
-        />
-
+      <Heading tag="Certifications" title="My Credentials" />
         <div className="flex flex-wrap gap-10 mb-10">
           {benefits.map((item) => (
             <div
@@ -63,6 +60,9 @@ const Benefits = () => {
             </div>
           ))}
         </div>
+        <div className="flex justify-center mt-12 md:mt-15 xl:mt-20">
+        <Button href="https://www.credly.com/users/aftab-s">See More</Button>
+      </div>
       </div>
     </Section>
   );

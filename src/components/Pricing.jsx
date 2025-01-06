@@ -1,50 +1,74 @@
+import React from 'react';
 import Section from "./Section";
-import { smallSphere, stars } from "../assets";
 import Heading from "./Heading";
-import PricingList from "./PricingList";
-import { LeftLine, RightLine } from "./design/Pricing";
+import Button from "./Button";
 
 const Pricing = () => {
   return (
-    <Section className="overflow-hidden" id="pricing">
-      <div className="container relative z-2">
-        <div className="hidden relative justify-center mb-[6.5rem] lg:flex">
-          <img
-            src={smallSphere}
-            className="relative z-1"
-            width={255}
-            height={255}
-            alt="Sphere"
-          />
-          <div className="absolute top-1/2 left-1/2 w-[60rem] -translate-x-1/2 -translate-y-1/2 pointer-events-none">
-            <img
-              src={stars}
-              className="w-full"
-              width={950}
-              height={400}
-              alt="Stars"
-            />
-          </div>
+    <Section className="overflow-hidden" id="contact">
+      <div className="container mx-auto px-4 py-16 relative z-2">
+        <div className="text-center mb-12">
+          <Heading tag="Contact Me" title="Get in Touch" />
         </div>
-
-        <Heading
-          tag="Get started with Brainwave"
-          title="Pay once, use forever"
-        />
-
-        <div className="relative">
-          <PricingList />
-          <LeftLine />
-          <RightLine />
-        </div>
-
-        <div className="flex justify-center mt-10">
-          <a
-            className="text-xs font-code font-bold tracking-wider uppercase border-b"
-            href="/pricing"
-          >
-            See the full details
-          </a>
+        <div className="max-w-lg mx-auto p-1 bg-gradient-to-r from-yellow-200 via-red-200 via-blue-400 via-teal-400 to-purple-500 rounded-lg">
+          <form className="max-w-lg mx-auto bg-no-repeat p-8 rounded-lg shadow-lg bg-black">
+            <div className="mb-6">
+              <label htmlFor="name" className="block text-gray-200 text-sm font-thin mb-2">
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:border-blue-500"
+                required
+              />
+            </div>
+            <div className="mb-6">
+              <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:border-blue-500"
+                required
+              />
+            </div>
+            <div className="mb-6">
+              <label htmlFor="subject" className="block text-gray-700 text-sm font-bold mb-2">
+                Subject
+              </label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:border-blue-500"
+                required
+              />
+            </div>
+            <div className="mb-6">
+              <label htmlFor="message" className="block text-gray-700 text-sm font-bold mb-2">
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:border-blue-500"
+                required
+              ></textarea>
+            </div>
+            <div className="text-center">
+              <Button
+                type="submit"
+                className="text-white px-6 py-2 rounded-lg hover:from-blue-600 hover:to-purple-600 focus:outline-none focus:from-blue-600 focus:to-purple-600"
+              >
+                Send Message
+              </Button>
+            </div>
+          </form>
         </div>
       </div>
     </Section>

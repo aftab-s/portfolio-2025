@@ -6,7 +6,7 @@ const AboutMe = () => {
   return (
     <Section id="about-me" className="py-16">
       <div className="container mx-auto text-center">
-        <Heading tag="About Me" title="Hello there!" />
+        <Heading tag="About Me" title="Hello There!" />
         <p className="mt-4 text-lg text-gray-400">
         Hi there! I’m Aftab, a DevOps Engineer with a knack for cloud-native tech and a surprising background in Electronics and Communication. 
         My toolkit includes AWS, Docker, Kubernetes, Prometheus, Grafana, Git, and Terraform—I love testing, tinkering, and building things that are both fun and functional. 

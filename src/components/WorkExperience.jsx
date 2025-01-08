@@ -88,7 +88,7 @@ const ExperienceCard = ({ experience }) => {
 
 const WorkExperience = () => {
   return (
-    <Section id="work-experience" className="py-16">
+    <Section crosses id="work-experience" className="py-16">
       <div className="container mx-auto px-4 relative">
         <motion.div>
           <Heading tag="Work Experience" title="My Professional Journey" />

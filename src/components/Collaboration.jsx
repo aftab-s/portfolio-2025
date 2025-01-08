@@ -7,7 +7,7 @@ import Heading from './Heading';
 
 const Collaboration = () => {
   return (
-    <Section crosses>
+    <Section crosses id="skills">
       <div className="container lg:flex">
         <div className="max-w-[25rem]">
         <Heading tag="Tech Stack" title="My Expertise" />

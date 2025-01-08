@@ -2,6 +2,7 @@ import Section from "./Section";
 import Heading from "./Heading";
 import { service1, service2, service3, check } from "../assets";
 import { brainwaveServices, brainwaveServicesIcons } from "../constants";
+import Button from "./Button";
 import {
   PhotoChatMessage,
   Gradient,
@@ -13,7 +14,7 @@ import Generating from "./Generating";
 
 const Services = () => {
   return (
-    <Section id="how-to-use">
+    <Section crosses id="how-to-use">
       <div className="container">
       <Heading tag="Beyond Work" title="Extra-Professional Contributions" />
 
@@ -30,9 +31,9 @@ const Services = () => {
             </div>
 
             <div className="relative z-1 max-w-[17rem] ml-auto">
-              <h4 className="h4 mb-4">Smartest AI</h4>
+              <h4 className="h4 mb-4">Community</h4>
               <p className="body-2 mb-[3rem] text-n-3">
-                Brainwave unlocks the potential of AI-powered applications
+                Building inclusive tech communities through knowledge sharing.
               </p>
               <ul className="body-2">
                 {brainwaveServices.map((item, index) => (
@@ -62,23 +63,29 @@ const Services = () => {
                 />
               </div>
 
-              <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-b from-n-8/0 to-n-8/90 lg:p-15">
-                <h4 className="h4 mb-4">Photo editing</h4>
+              <div className="absolute inset-0 flex flex-col justify-end p-8 pb-20 bg-gradient-to-b from-n-8/0 to-n-8/90 lg:p-15 lg:pb-20">
+                <h4 className="h4 mb-4">Tech Blogger</h4>
                 <p className="body-2 mb-[3rem] text-n-3">
-                  Automatically enhance your photos using our AI app&apos;s
-                  photo editing feature. Try it now!
+                Stay updated with the latest trends in technology, insightful articles, and in-depth reviews. Join me on my journey through the tech world!
                 </p>
               </div>
-
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 lg:bottom-10 lg:right-5 lg:left-auto lg:transform-none">
+              <Button
+                href="https://aftabs.hashnode.dev/"
+                className="text-white bg-n-8 px-6 py-2 rounded-lg hover:from-blue-600 hover:to-purple-600 focus:outline-none focus:from-blue-600 focus:to-purple-600"
+              >
+                Explore Blogs
+              </Button>
+            </div>
               <PhotoChatMessage />
             </div>
 
             <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem]">
               <div className="py-12 px-4 xl:px-8">
-                <h4 className="h4 mb-4">Video generation</h4>
+                <h4 className="h4 mb-4">Public Speaker</h4>
                 <p className="body-2 mb-[2rem] text-n-3">
-                  The world’s most powerful AI photo and video art generation
-                  engine. What will you create?
+                I love speaking at tech events and workshops, bringing a unique blend of humor and real-world insights to cloud-native and observability topics. 
+                My goal? To make every talk an engaging experience that leaves people informed, entertained, and excited to try something new.
                 </p>
 
                 <ul className="flex items-center justify-between">
@@ -106,17 +113,17 @@ const Services = () => {
               </div>
 
               <div className="relative h-[20rem] bg-n-8 rounded-xl overflow-hidden md:h-[25rem]">
-                <img
-                  src={service3}
-                  className="w-full h-full object-cover"
-                  width={520}
-                  height={400}
-                  alt="Scary robot"
-                />
-
-                <VideoChatMessage />
-                <VideoBar />
-              </div>
+  <img
+    src={service3}
+    className="w-full h-full object-cover"
+    style={{ objectPosition: 'center 50%' }} // Adjust this value as needed
+    width={520}
+    height={400}
+    alt="Scary robot"
+  />
+  <VideoChatMessage />
+  <VideoBar />
+</div>
             </div>
           </div>
 

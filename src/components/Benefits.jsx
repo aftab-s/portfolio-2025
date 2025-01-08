@@ -8,7 +8,7 @@ import Button from "./Button";
 
 const Benefits = () => {
   return (
-    <Section id="features">
+    <Section crosses id="features">
       <div className="container relative z-2">
         <Heading tag="Certifications" title="My Credentials" />
         <div className="flex flex-wrap justify-center gap-8 mb-10">

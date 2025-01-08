@@ -5,9 +5,9 @@ import Button from "./Button";
 
 const Pricing = () => {
   return (
-    <Section className="overflow-hidden" id="contact">
+    <Section crosses className="overflow-hidden" id="contact">
       <div className="container mx-auto px-4 py-16 relative z-2">
-        <div className="text-center mb-12">
+        <div className="lg:text-center mb-12">
           <Heading tag="Contact Me" title="Get in Touch" />
         </div>
         <div className="max-w-lg mx-auto p-0.5 bg-gradient-to-r from-yellow-200 via-red-200 via-blue-400 via-teal-400 to-purple-500 rounded-lg">

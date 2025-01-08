@@ -5,7 +5,7 @@ import Heading from './Heading';
 const AboutMe = () => {
   return (
     <Section id="about-me" className="py-16">
-      <div className="container mx-auto text-center">
+      <div className="container mx-auto lg:text-center">
         <Heading tag="About Me" title="Hello There!" />
         <p className="mt-4 text-lg text-gray-400">
         Hi there! I’m Aftab, a DevOps Engineer with a knack for cloud-native tech and a surprising background in Electronics and Communication. 

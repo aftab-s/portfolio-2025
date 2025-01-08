@@ -36,9 +36,9 @@ import protopie from "./collaboration/Grafana.svg";
 import raindrop from "./collaboration/prometheus.svg";
 import slack from "./collaboration/git.svg";
 
-import service1 from "./services/service-1.png";
-import service2 from "./services/service-2.png";
-import service3 from "./services/service-3.png";
+import service1 from "./services/service-4.png";
+import service2 from "./services/beyondWork/wordpress-3.webp";
+import service3 from "./services/beyondWork/wordpress-2.webp";
 
 import lines from "./pricing/lines.svg";
 import stars from "./pricing/stars.svg";

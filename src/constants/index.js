@@ -51,13 +51,13 @@ export const navigation = [
   },
   {
     id: "2",
-    title: "Projects",
-    url: "#projects",
+    title: "Experience",
+    url: "#work-experience",
   },
   {
     id: "3",
-    title: "Experience",
-    url: "#experience",
+    title: "Projects",
+    url: "#roadmap",
   },
   // {
   //   id: "4",
@@ -80,9 +80,11 @@ export const notificationImages = [notification4, notification3, notification2];
 export const companyLogos = [yourlogo, yourlogo, yourlogo, yourlogo, yourlogo];
 
 export const brainwaveServices = [
-  "Photo generating",
-  "Photo enhance",
-  "Seamless Integration",
+  "Grafana and Friends Kochi",
+  "CNCF & CNCG Kochi",
+  "AWS UG Kochi",
+  "DevOps Malayalam",
+  "WordPress Kerala",
 ];
 
 export const brainwaveServicesIcons = [

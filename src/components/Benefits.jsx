@@ -10,11 +10,14 @@ const Benefits = () => {
   return (
     <Section id="features">
       <div className="container relative z-2">
-      <Heading tag="Certifications" title="My Credentials" />
-        <div className="flex flex-wrap gap-10 mb-10">
+        <Heading tag="Certifications" title="My Credentials" />
+        <div className="flex flex-wrap justify-center gap-8 mb-10">
           {benefits.map((item) => (
-            <div
-              className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem]"
+            <a
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] w-full md:w-80"
               style={{
                 backgroundImage: `url(${item.backgroundUrl})`,
               }}
@@ -57,12 +60,12 @@ const Benefits = () => {
               </div>
 
               <ClipPath />
-            </div>
+            </a>
           ))}
         </div>
         <div className="flex justify-center mt-12 md:mt-15 xl:mt-20">
-        <Button href="https://www.credly.com/users/aftab-s">See More</Button>
-      </div>
+          <Button href="https://www.credly.com/users/aftab-s">See More</Button>
+        </div>
       </div>
     </Section>
   );

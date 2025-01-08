@@ -1,4 +1,4 @@
-import brainwave from "./logo-pink-3.png";
+import brainwave from "./AM-logo.png";
 import check from "./check.svg";
 import brainwaveSymbol from "./brainwave-symbol.svg";
 import brainwaveWhiteSymbol from "./brainwave-symbol-white.svg";
@@ -67,7 +67,9 @@ import benefitIcon1 from "./benefits/icon-1.svg";
 import benefitIcon2 from "./benefits/icon-2.svg";
 import benefitIcon3 from "./benefits/icon-3.svg";
 import benefitIcon4 from "./benefits/icon-4.svg";
-import benefitImage2 from "./benefits/image-2.png";
+import benefitImage2 from "./benefits/terraform-cert.png";
+import benefitImage3 from "./benefits/github-cert.png";
+import benefitImage4 from "./benefits/gremlin-cert.png";
 
 import discordBlack from "./socials/discord.svg";
 import facebook from "./socials/facebook.svg";
@@ -139,6 +141,8 @@ export {
   benefitIcon3,
   benefitIcon4,
   benefitImage2,
+  benefitImage3,
+  benefitImage4,
   discordBlack,
   facebook,
   instagram,

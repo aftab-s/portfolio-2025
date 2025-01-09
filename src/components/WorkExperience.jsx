@@ -40,7 +40,7 @@ const workExperiences = [
     company: "SFO Technologies",
     duration: "Jun 2022 - Jul 2022",
     description: "Assisted in R&D projects, explored optical technologies, and participated in PCB manufacturing with advanced processes.",
-    logo: companyCLogo,
+    logo: companyDLogo,
   },
   {
     id: 4,
@@ -48,7 +48,7 @@ const workExperiences = [
     company: "Freelance",
     duration: "Aug 2021 - Jan 2022",
     description: "Made over 100 models and textures for various clients in and out of technical domains.",
-    logo: companyDLogo,
+    logo: companyCLogo,
   },
 ];
 

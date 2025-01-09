@@ -50,6 +50,7 @@ import roadmap1 from "./roadmap/image-1.png";
 import roadmap2 from "./roadmap/image-2.png";
 import roadmap3 from "./roadmap/image-3.png";
 import roadmap4 from "./roadmap/image-4.png";
+import roadmap5 from "./roadmap/image-5.png";
 import undone from "./roadmap/undone.svg";
 
 import notification1 from "./notification/image-1.png";
@@ -125,6 +126,7 @@ export {
   roadmap2,
   roadmap3,
   roadmap4,
+  roadmap5,
   undone,
   notification1,
   notification2,

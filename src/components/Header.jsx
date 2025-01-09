@@ -63,7 +63,9 @@ const Header = () => {
               </a>
             ))}
 <div className="mt-4 lg:hidden">
-              <Button className="text-white bg-n-8 px-6 py-2 rounded-lg hover:from-blue-600 hover:to-purple-600 focus:outline-none focus:from-blue-600 focus:to-purple-600">
+              <Button 
+              href="#contact"
+              className="text-white bg-n-8 px-6 py-2 rounded-lg hover:from-blue-600 hover:to-purple-600 focus:outline-none focus:from-blue-600 focus:to-purple-600">
                 Let's Connect!
               </Button>
             </div>

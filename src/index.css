@@ -17,6 +17,19 @@
   scroll-behavior: smooth
 }
 
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gradient-to-b from-transparent via-red-200 via-purple-400 to-transparent rounded-full;
+}
+
 @layer base {
   body {
     @apply font-sans bg-n-8 text-n-1 text-base;

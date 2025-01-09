@@ -25,7 +25,6 @@ const App = () => {
         <Benefits />
         <Services /> 
         <Pricing />
-
         <Footer />
       </div>
 

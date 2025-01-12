@@ -58,7 +58,12 @@ export const navigation = [
   {
     id: "3",
     title: "Projects",
-    url: "#roadmap",
+    url: "#projects",
+  },
+  {
+    id: "4",
+    title: "Resume",
+    url: "https://drive.google.com/file/d/1EE_ZeMhSiI-8NQUAJNI2ODAWlTlQwc52/view?usp=sharing",
   },
   // {
   //   id: "4",

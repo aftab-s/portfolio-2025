@@ -1,0 +1,10 @@
+/* Custom styles for toast notifications */
+.toast-success {
+    background-color: #210021 !important; /* Green background for success */
+    color: rgb(255, 255, 255) !important; /* White text color */
+  }
+  
+  .toast-error {
+    background-color: #f44336 !important; /* Red background for error */
+    color: white !important; /* White text color */
+  }

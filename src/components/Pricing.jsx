@@ -3,7 +3,10 @@ import Section from "./Section";
 import Heading from "./Heading";
 import Button from "./Button";
 import emailjs from "emailjs-com";
-
+import { smallSphere, stars } from "../assets";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "../toast.css";
 const Pricing = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
@@ -46,7 +49,9 @@ const Pricing = () => {
       .then(
         () => {
           setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
+          toast.success("Thank you. I will get back to you as soon as possible.",{
+            className: 'toast-success',
+          });
 
           setForm({
             name: "",
@@ -59,7 +64,9 @@ const Pricing = () => {
           setLoading(false);
           console.error(error);
 
-          alert("Uh oh, something went wrong. Please try again.");
+          toast.error("Uh oh, something went wrong. Please try again.", {
+            className: 'toast-error',
+          });
         }
       );
   };
@@ -67,6 +74,24 @@ const Pricing = () => {
   return (
     <Section crosses className="overflow-hidden" id="contact">
       <div className="container mx-auto px-4 py-16 relative z-2">
+      <div className="hidden relative justify-center mb-[10rem] lg:flex">
+          <img
+            src={smallSphere}
+            className="relative z-1"
+            width={255}
+            height={255}
+            alt="Sphere"
+          />
+          <div className="absolute top-1/2 left-1/2 w-[60rem] -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+            <img
+              src={stars}
+              className="w-full"
+              width={950}
+              height={400}
+              alt="Stars"
+            />
+          </div>
+        </div>
         <div className="lg:text-center mb-12">
           <Heading tag="Contact Me" title="Get in Touch" />
         </div>
@@ -76,7 +101,10 @@ const Pricing = () => {
             className="max-w-lg mx-auto bg-no-repeat p-8 rounded-lg shadow-lg bg-n-7"
           >
             <div className="mb-6">
-              <label htmlFor="name" className="block text-gray-200 text-sm font-thin mb-2">
+              <label
+                htmlFor="name"
+                className="block text-gray-200 text-sm font-thin mb-2"
+              >
                 Name
               </label>
               <input
@@ -91,7 +119,10 @@ const Pricing = () => {
               />
             </div>
             <div className="mb-6">
-              <label htmlFor="email" className="block text-gray-200 text-sm font-thin mb-2">
+              <label
+                htmlFor="email"
+                className="block text-gray-200 text-sm font-thin mb-2"
+              >
                 Email
               </label>
               <input
@@ -106,7 +137,10 @@ const Pricing = () => {
               />
             </div>
             <div className="mb-6">
-              <label htmlFor="subject" className="block text-gray-200 text-sm font-thin mb-2">
+              <label
+                htmlFor="subject"
+                className="block text-gray-200 text-sm font-thin mb-2"
+              >
                 Subject
               </label>
               <input
@@ -121,7 +155,10 @@ const Pricing = () => {
               />
             </div>
             <div className="mb-6">
-              <label htmlFor="message" className="block text-gray-200 text-sm font-thin mb-2">
+              <label
+                htmlFor="message"
+                className="block text-gray-200 text-sm font-thin mb-2"
+              >
                 Message
               </label>
               <textarea
@@ -146,6 +183,7 @@ const Pricing = () => {
           </form>
         </div>
       </div>
+      <ToastContainer />
     </Section>
   );
 };

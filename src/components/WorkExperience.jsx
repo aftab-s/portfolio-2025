@@ -99,9 +99,9 @@ const WorkExperience = () => {
               <ExperienceCard key={`experience-${index}`} experience={experience} />
             ))}
           </VerticalTimeline>
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2">
-            <div className="w-4 h-4 bg-[#28d4ff] rounded-full"></div>
-          </div>
+          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 hidden lg:block">
+  <div className="w-4 h-4 bg-[#28d4ff] rounded-full"></div>
+</div>
         </div>
         <div className="absolute inset-0 z-0">
           <GradientLight />

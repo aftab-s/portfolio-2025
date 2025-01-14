@@ -39,7 +39,7 @@ import {
   yourlogo,
 } from "../assets";
 
-import card1 from "../assets/card-1.svg";
+import card1 from "../assets/benefits/card-1.png";
 import card2 from "../assets/card-2.svg";
 import card3 from "../assets/card-3.svg";
 

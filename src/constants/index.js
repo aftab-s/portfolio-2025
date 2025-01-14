@@ -39,6 +39,10 @@ import {
   yourlogo,
 } from "../assets";
 
+import card1 from "../assets/card-1.svg";
+import card2 from "../assets/card-2.svg";
+import card3 from "../assets/card-3.svg";
+
 export const navigation = [
   {
     id: "0",
@@ -248,7 +252,7 @@ export const benefits = [
     id: "0",
     title: "HashiCorp Certified: Terraform Associate (003)",
     text: "HashiCorp",
-    backgroundUrl: "public/card-1.svg",
+    backgroundUrl: card1,
     iconUrl: benefitIcon1,
     imageUrl: benefitImage2,
     url: "https://www.credly.com/badges/76468702-3a98-4a54-a9a1-d27ebf1d5dc4/public_url",
@@ -257,7 +261,7 @@ export const benefits = [
     id: "1",
     title: "GitHub Foundations",
     text: "GitHub",
-    backgroundUrl: "public/card-2.svg",
+    backgroundUrl: card2,
     iconUrl: benefitIcon2,
     imageUrl: benefitImage3,
     url: "https://www.credly.com/badges/749ed6b8-ef36-442c-8792-46f41fd01c3a/public_url",
@@ -267,7 +271,7 @@ export const benefits = [
     id: "2",
     title: "Gremlin Certified: Chaos Engineering Practitioner",
     text: "Gremlin",
-    backgroundUrl: "public/card-3.svg",
+    backgroundUrl: card3,
     iconUrl: benefitIcon3,
     imageUrl: benefitImage4,
     url: "https://www.credential.net/b0603ce1-1771-4455-b5f2-00d57aea7ee5#acc.shi8cyuq",

@@ -26,7 +26,7 @@ const Collaboration = () => {
             ))}
           </ul>
 
-          <a href="https://drive.google.com/file/d/1EE_ZeMhSiI-8NQUAJNI2ODAWlTlQwc52/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+          <a href="https://drive.google.com/file/d/1n-2w7eN4t50LWtJmu8ZzJEAtE4MUVpeA/view?usp=sharing" target="_blank" rel="noopener noreferrer">
             <Button>Resume</Button>
           </a>
         </div>

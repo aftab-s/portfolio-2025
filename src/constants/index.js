@@ -40,8 +40,8 @@ import {
 } from "../assets";
 
 import card1 from "../assets/benefits/card-1.png";
-import card2 from "../assets/card-2.svg";
-import card3 from "../assets/card-3.svg";
+import card2 from "../assets/benefits/card-2.png";
+import card3 from "../assets/benefits/card-3.png";
 
 export const navigation = [
   {

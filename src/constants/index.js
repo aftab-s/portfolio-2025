@@ -146,7 +146,7 @@ export const collabText =
   export const collabContent = [
   
     { id: "0", title: "Infrastructure as Code" },
-    { id: "1", title: "Monitoring and Logging" },
+    { id: "1", title: "Monitoring and Observability" },
     { id: "2", title: "Cloud Architecture" },
     { id: "3", title: "CI/CD Pipelines" },
     { id: "3", title: "Design" },

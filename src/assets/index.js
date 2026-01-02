@@ -71,6 +71,7 @@ import benefitIcon4 from "./benefits/icon-4.svg";
 import benefitImage2 from "./benefits/terraform-cert.png";
 import benefitImage3 from "./benefits/github-cert.png";
 import benefitImage4 from "./benefits/gremlin-cert.png";
+import benefitImage5 from "./benefits/cka-cert.png";
 
 import discordBlack from "./socials/discord.svg";
 import facebook from "./socials/facebook.svg";
@@ -145,6 +146,7 @@ export {
   benefitImage2,
   benefitImage3,
   benefitImage4,
+  benefitImage5,
   discordBlack,
   facebook,
   instagram,

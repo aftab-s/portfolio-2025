@@ -6,6 +6,7 @@ import {
   benefitImage2,
   benefitImage3,
   benefitImage4,
+  benefitImage5,
   chromecast,
   disc02,
   discord,
@@ -67,7 +68,7 @@ export const navigation = [
   {
     id: "4",
     title: "Resume",
-    url: "https://drive.google.com/file/d/1n-2w7eN4t50LWtJmu8ZzJEAtE4MUVpeA/view?usp=sharing",
+    url: "https://drive.google.com/file/d/1MxrVj-IT5qocipFnd1ejNmTrNIRgdo1R/view?usp=sharing",
   },
   // {
   //   id: "4",
@@ -275,6 +276,15 @@ export const benefits = [
     iconUrl: benefitIcon3,
     imageUrl: benefitImage4,
     url: "https://www.credential.net/b0603ce1-1771-4455-b5f2-00d57aea7ee5#acc.shi8cyuq",
+  },
+  {
+    id: "3",
+    title: "Certified Kubernetes Administrator (CKA)",
+    text: "The Linux Foundation",
+    backgroundUrl: card1,
+    iconUrl: benefitIcon4,
+    imageUrl: benefitImage5,
+    url: "https://www.credly.com/badges/4224a580-2651-4669-b1fe-5e0677ee5051/public_url",
   },
   // {
   //   id: "3",

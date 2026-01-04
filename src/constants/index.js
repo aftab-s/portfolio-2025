@@ -9,22 +9,22 @@ import {
   benefitImage5,
   chromecast,
   disc02,
-  discord,
+  aws,
   discordBlack,
   facebook,
-  figma,
+  terraform,
   file02,
-  framer,
+  docker,
   homeSmile,
   instagram,
   notification2,
   notification3,
   notification4,
-  notion,
-  photoshop,
+  kubernetes,
+  blender,
   plusSquare,
-  protopie,
-  raindrop,
+  grafana,
+  prometheus,
   recording01,
   recording03,
   roadmap1,
@@ -33,7 +33,7 @@ import {
   roadmap4,
   roadmap5,
   searchMd,
-  slack,
+  git,
   sliders04,
   telegram,
   twitter,
@@ -43,6 +43,12 @@ import {
 import card1 from "../assets/benefits/card-1.png";
 import card2 from "../assets/benefits/card-2.png";
 import card3 from "../assets/benefits/card-3.png";
+
+import sfo from "../assets/workExperience/sfo.jpg";
+import sfoTech from "../assets/workExperience/sfo-technologies.png";
+import freelance from "../assets/workExperience/freelance.png";
+import bhooshan from "../assets/workExperience/bhooshan.png";
+import abilytics from "../assets/workExperience/abilytics.png";
 
 export const navigation = [
   {
@@ -156,59 +162,59 @@ export const collabText =
 export const collabApps = [
   {
     id: "0",
-    title: "Figma",
-    icon: figma,
-    width: 26,
-    height: 36,
-  },
-  {
-    id: "1",
-    title: "Notion",
-    icon: notion,
-    width: 34,
-    height: 36,
-  },
-  {
-    id: "2",
-    title: "Discord",
-    icon: discord,
+    title: "AWS",
+    icon: aws,
     width: 36,
     height: 28,
   },
   {
-    id: "3",
-    title: "Slack",
-    icon: slack,
-    width: 34,
-    height: 35,
+    id: "1",
+    title: "Terraform",
+    icon: terraform,
+    width: 26,
+    height: 36,
   },
   {
-    id: "4",
-    title: "Photoshop",
-    icon: photoshop,
-    width: 34,
-    height: 34,
-  },
-  {
-    id: "5",
-    title: "Protopie",
-    icon: protopie,
-    width: 34,
-    height: 34,
-  },
-  {
-    id: "6",
-    title: "Framer",
-    icon: framer,
+    id: "2",
+    title: "Docker",
+    icon: docker,
     width: 26,
     height: 34,
   },
   {
-    id: "7",
-    title: "Raindrop",
-    icon: raindrop,
+    id: "3",
+    title: "Kubernetes",
+    icon: kubernetes,
+    width: 34,
+    height: 36,
+  },
+  {
+    id: "4",
+    title: "Git",
+    icon: git,
+    width: 34,
+    height: 35,
+  },
+  {
+    id: "5",
+    title: "Prometheus",
+    icon: prometheus,
     width: 38,
     height: 32,
+  },
+  {
+    id: "6",
+    title: "Grafana",
+    icon: grafana,
+    width: 34,
+    height: 34,
+  },
+  {
+    id: "7",
+    title: "Blender",
+    icon: blender,
+    width: 34,
+    height: 34,
   },
 ];
 
@@ -251,6 +257,15 @@ export const pricing = [
 export const benefits = [
   {
     id: "0",
+    title: "Certified Kubernetes Administrator (CKA)",
+    text: "The Linux Foundation",
+    backgroundUrl: card1,
+    iconUrl: benefitIcon4,
+    imageUrl: benefitImage5,
+    url: "https://www.credly.com/badges/4224a580-2651-4669-b1fe-5e0677ee5051/public_url",
+  },
+  {
+    id: "1",
     title: "HashiCorp Certified: Terraform Associate (003)",
     text: "HashiCorp",
     backgroundUrl: card1,
@@ -259,7 +274,7 @@ export const benefits = [
     url: "https://www.credly.com/badges/76468702-3a98-4a54-a9a1-d27ebf1d5dc4/public_url",
   },
   {
-    id: "1",
+    id: "2",
     title: "GitHub Foundations",
     text: "GitHub",
     backgroundUrl: card2,
@@ -269,22 +284,13 @@ export const benefits = [
     light: true,
   },
   {
-    id: "2",
+    id: "3",
     title: "Gremlin Certified: Chaos Engineering Practitioner",
     text: "Gremlin",
     backgroundUrl: card3,
     iconUrl: benefitIcon3,
     imageUrl: benefitImage4,
     url: "https://www.credential.net/b0603ce1-1771-4455-b5f2-00d57aea7ee5#acc.shi8cyuq",
-  },
-  {
-    id: "3",
-    title: "Certified Kubernetes Administrator (CKA)",
-    text: "The Linux Foundation",
-    backgroundUrl: card1,
-    iconUrl: benefitIcon4,
-    imageUrl: benefitImage5,
-    url: "https://www.credly.com/badges/4224a580-2651-4669-b1fe-5e0677ee5051/public_url",
   },
   // {
   //   id: "3",
@@ -311,6 +317,41 @@ export const benefits = [
   //   iconUrl: benefitIcon2,
   //   imageUrl: benefitImage2,
   // },
+];
+
+export const workExperiences = [
+  {
+    id: "0",
+    name: "Abilytics Inc.",
+    pos: "Software Engineer (Cloud & DevOps)",
+    date: "Jun 2023 - Present",
+    title: "Designed and managed scalable cloud infrastructure using AWS, Terraform, and CloudFormation. Worked with Docker and Kubernetes for container orchestration and focused on Observability with Prometheus and Grafana for monitoring and optimization.",
+    icon: abilytics,
+  },
+  {
+    id: "1",
+    name: "Bhooshan's Junior",
+    pos: "Junior Software Engineer",
+    date: "Feb 2023 - Jul 2023",
+    title: "Developed web applications with HTML, CSS, and related technologies, collaborated with cross-functional teams, and created interactive UIs for a comic reader app and company website.",
+    icon: bhooshan,
+  },
+  {
+    id: "2",
+    name: "SFO Technologies",
+    pos: "Intern - R&D",
+    date: "Jun 2022 - Jul 2022",
+    title: "Assisted in R&D projects, explored optical technologies, and participated in PCB manufacturing with advanced processes.",
+    icon: sfoTech,
+  },
+  {
+    id: "3",
+    name: "Freelance",
+    pos: "Junior 3D Artist",
+    date: "Freelance",
+    title: "Made over 100 models and textures for various clients in and out of technical domains.",
+    icon: freelance,
+  },
 ];
 
 export const socials = [

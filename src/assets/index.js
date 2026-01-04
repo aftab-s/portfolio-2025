@@ -27,14 +27,14 @@ import heroBackground from "./hero/hero-background.jpg";
 
 import curve1 from "./collaboration/curve-1.svg";
 import curve2 from "./collaboration/curve-2.svg";
-import figma from "./collaboration/terraform.svg";
-import discord from "./collaboration/aws.png";
-import framer from "./collaboration/docker-logo.png";
-import notion from "./collaboration/redux.png";
-import photoshop from "./collaboration/tailwind.png";
-import protopie from "./collaboration/Grafana.svg";
-import raindrop from "./collaboration/prometheus.svg";
-import slack from "./collaboration/git.svg";
+import terraform from "./collaboration/terraform.svg";
+import aws from "./collaboration/aws.png";
+import docker from "./collaboration/docker-logo.png";
+import kubernetes from "./collaboration/redux.png";
+import blender from "./collaboration/tailwind.png";
+import grafana from "./collaboration/Grafana.svg";
+import prometheus from "./collaboration/prometheus.svg";
+import git from "./collaboration/git.svg";
 
 import service1 from "./services/service-4.png";
 import service2 from "./services/beyondWork/wordpress-3.webp";
@@ -79,6 +79,14 @@ import instagram from "./socials/instagram.svg";
 import telegram from "./socials/telegram.svg";
 import twitter from "./socials/twitter.svg";
 
+import beyondWork1 from "./beyond-work/1.jpg";
+import beyondWork2 from "./beyond-work/2.jpg";
+import beyondWork3 from "./beyond-work/3.jpg";
+import beyondWork4 from "./beyond-work/4.jpg";
+import beyondWork5 from "./beyond-work/5.jpg";
+import beyondWork6 from "./beyond-work/6.jpg";
+import beyondWork7 from "./beyond-work/7.jpg";
+
 export {
   brainwave,
   check,
@@ -107,14 +115,14 @@ export {
   heroBackground,
   curve1,
   curve2,
-  discord,
-  figma,
-  framer,
-  notion,
-  photoshop,
-  protopie,
-  raindrop,
-  slack,
+  aws,
+  terraform,
+  docker,
+  kubernetes,
+  blender,
+  grafana,
+  prometheus,
+  git,
   service1,
   service2,
   service3,
@@ -152,4 +160,11 @@ export {
   instagram,
   telegram,
   twitter,
+  beyondWork1,
+  beyondWork2,
+  beyondWork3,
+  beyondWork4,
+  beyondWork5,
+  beyondWork6,
+  beyondWork7,
 };

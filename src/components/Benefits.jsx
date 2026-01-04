@@ -1,73 +1,87 @@
+import { motion } from "framer-motion";
 import { benefits } from "../constants";
-import Heading from "./Heading";
-import Section from "./Section";
-import Arrow from "../assets/svg/Arrow";
-import { GradientLight } from "./design/Benefits";
-import ClipPath from "../assets/svg/ClipPath";
-import Button from "./Button";
 
 const Benefits = () => {
   return (
-    <Section crosses id="features">
-      <div className="container relative z-2">
-        <Heading tag="Certifications" title="My Credentials" />
-        <div className="flex flex-wrap justify-center gap-8 mb-10">
-          {benefits.map((item) => (
-            <a
-              href={item.url}
+    <section id="certifications" className="py-20 lg:py-28 relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 opacity-[0.03]" style={{
+        backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(172, 106, 255, 0.1) 40px, rgba(172, 106, 255, 0.1) 41px)`
+      }} />
+      <motion.div 
+        animate={{ y: [0, -30, 0], opacity: [0.1, 0.15, 0.1] }}
+        transition={{ duration: 10, repeat: Infinity }}
+        className="absolute top-1/2 left-0 w-[600px] h-[300px] bg-color-1 rounded-full blur-[200px]" 
+      />
+      
+      <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-3 mb-4"
+          >
+            <div className="h-px w-8 bg-gradient-to-r from-transparent to-color-1" />
+            <span className="text-xs font-mono tracking-[0.3em] uppercase text-color-1">// Certifications</span>
+            <div className="h-px w-8 bg-gradient-to-l from-transparent to-color-1" />
+          </motion.div>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-3xl md:text-4xl lg:text-5xl font-semibold text-n-1"
+          >
+            Verified <span className="text-transparent bg-clip-text bg-gradient-to-r from-color-1 to-color-5">Expertise</span>
+          </motion.h2>
+        </div>
+
+        {/* Certifications Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          {benefits.map((cert, index) => (
+            <motion.a
+              key={cert.id}
+              href={cert.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] w-full md:w-80"
-              style={{
-                backgroundImage: `url(${item.backgroundUrl})`,
-              }}
-              key={item.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.05 }}
+              whileHover={{ y: -4 }}
+              className="group block"
             >
-              <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem] pointer-events-none">
-                <h5 className="h5 mb-5">{item.title}</h5>
-                <p className="body-2 mb-6 text-n-3">{item.text}</p>
-                <div className="flex items-center mt-auto">
-                  <img
-                    src={item.iconUrl}
-                    width={48}
-                    height={48}
-                    alt={item.title}
-                  />
-                  <p className="ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider">
-                    Explore more
-                  </p>
-                  <Arrow />
+              <div className="relative h-full p-5 bg-n-8/70 border border-n-6/40 rounded-2xl hover:border-color-1/40 transition-all duration-300">
+                {/* Hover Glow */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-color-1/10 to-color-5/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+                
+                <div className="relative">
+                  {/* Icon */}
+                  <div className="w-10 h-10 rounded-xl bg-n-7 border border-n-6/50 flex items-center justify-center mb-4 group-hover:border-color-1/50 transition-colors">
+                    <img src={cert.iconUrl} alt={cert.title} className="w-5 h-5 object-contain" />
+                  </div>
+                  
+                  {/* Content */}
+                  <h3 className="text-sm font-semibold text-n-1 mb-2 leading-tight">{cert.title}</h3>
+                  <p className="text-xs text-n-4 line-clamp-2">{cert.text}</p>
+                  
+                  {/* Link Indicator */}
+                  <div className="flex items-center gap-1 mt-3 text-xs text-color-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span>View</span>
+                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </div>
                 </div>
               </div>
-
-              {item.light && <GradientLight />}
-
-              <div
-                className="absolute inset-0.5 bg-n-8"
-                style={{ clipPath: "url(#benefits)" }}
-              >
-                <div className="absolute inset-0 opacity-0 transition-opacity hover:opacity-10">
-                  {item.imageUrl && (
-                    <img
-                      src={item.imageUrl}
-                      width={380}
-                      height={362}
-                      alt={item.title}
-                      className="w-full h-full object-cover"
-                    />
-                  )}
-                </div>
-              </div>
-
-              <ClipPath />
-            </a>
+            </motion.a>
           ))}
         </div>
-        <div className="flex justify-center mt-12 md:mt-15 xl:mt-20">
-          <Button href="https://www.credly.com/users/aftab-s">See More</Button>
-        </div>
       </div>
-    </Section>
+    </section>
   );
 };
 

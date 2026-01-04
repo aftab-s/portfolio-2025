@@ -1,142 +1,124 @@
-import Section from "./Section";
-import Heading from "./Heading";
-import { service1, service2, service3, check } from "../assets";
+import { motion } from "framer-motion";
 import { brainwaveServices, brainwaveServicesIcons } from "../constants";
-import Button from "./Button";
-import { GradientLight } from "./design/Benefits";
-import {
-  PhotoChatMessage,
-  Gradient,
-  VideoBar,
-  VideoChatMessage,
-} from "./design/Services";
-
-import Generating from "./Generating";
+import beyondWork from "../assets/services/beyondWork/beyond-work.png";
 
 const Services = () => {
+  const communities = [
+    { name: "Grafana and Friends Kochi", role: "Core Organizer", emoji: "📊" },
+    { name: "CNCF & CNCG Kochi", role: "Community Member", emoji: "☸️" },
+    { name: "AWS UG Kochi", role: "Active Member", emoji: "☁️" },
+    { name: "DevOps Malayalam", role: "Contributor", emoji: "🛠️" },
+    { name: "WordPress Kerala", role: "Community Member", emoji: "🌐" },
+  ];
+
   return (
-    <Section crosses id="how-to-use">
-      <div className="container">
-        <Heading tag="Beyond Work" title="Me Outside of Work" />
+    <section id="beyond-work" className="py-20 lg:py-28 relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 opacity-[0.015]" style={{
+        backgroundImage: `conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(172, 106, 255, 0.3) 60deg, transparent 120deg)`,
+      }} />
+      <motion.div 
+        animate={{ rotate: 360 }}
+        transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-conic from-color-1/10 via-transparent to-color-5/10 rounded-full blur-[100px] opacity-50" 
+      />
+      
+      <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+        {/* Header */}
+        <div className="mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-3 mb-4"
+          >
+            <span className="text-xs font-mono tracking-[0.3em] uppercase text-color-1">// Beyond Work</span>
+            <div className="h-px w-16 bg-gradient-to-r from-color-1 to-transparent" />
+          </motion.div>
 
-        <div className="relative">
-          <div className="relative z-1 flex items-center h-[39rem] mb-5 p-8 border border-n-1/10 rounded-3xl rounded-3xl overflow-hidden lg:p-20 xl:h-[46rem]"> 
-          {/* border-gradient-to-r from-transparent via-emerald-400 to-transparent */}
-            <div className="absolute top-0 left-0 w-full h-full pointer-events-none md:w-3/5 xl:w-auto">
-              <img
-                className="w-full h-full object-cover md:object-right"
-                width={800}
-                alt="Smartest AI"
-                height={730}
-                src={service1}
-              />
-            </div>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-3xl md:text-4xl lg:text-5xl font-semibold text-n-1 mb-4"
+          >
+            Community <span className="text-transparent bg-clip-text bg-gradient-to-r from-color-1 to-color-5">Involvement</span>
+          </motion.h2>
+          
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.15 }}
+            className="text-n-3 max-w-xl"
+          >
+            Active participant and organizer in tech communities, sharing knowledge and learning from fellow enthusiasts.
+          </motion.p>
+        </div>
 
-            <div className="relative z-1 max-w-[17rem] ml-auto">
-              <h4 className="h4 mb-4">Community</h4>
-              <p className="body-2 mb-[3rem] text-n-3">
-                Building inclusive tech communities through knowledge sharing.
-              </p>
-              <ul className="body-2">
-                {brainwaveServices.map((item, index) => (
-                  <li
-                    key={index}
-                    className="flex items-start py-4 border-t border-n-6"
-                  >
-                    <img width={24} height={24} src={check} />
-                    <p className="ml-4">{item}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <Generating className="absolute left-4 right-4 bottom-4 border-n-1/10 border lg:left-1/2 lg-right-auto lg:bottom-8 lg:-translate-x-1/2" />
-          </div>
+        {/* Main Content Grid */}
+        <div className="grid lg:grid-cols-[1fr_1.2fr] gap-6">
+          {/* Communities List */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="space-y-3"
+          >
+            {communities.map((community, index) => (
+              <motion.div
+                key={community.name}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05 }}
+                whileHover={{ x: 5 }}
+                className="group flex items-center gap-4 p-4 bg-n-8/60 border border-n-6/40 rounded-xl hover:border-color-1/40 transition-all duration-300"
+              >
+                <span className="text-2xl">{community.emoji}</span>
+                <div className="flex-1">
+                  <h3 className="text-sm font-semibold text-n-1">{community.name}</h3>
+                  <p className="text-xs text-n-4">{community.role}</p>
+                </div>
+                <svg className="w-4 h-4 text-n-5 group-hover:text-color-1 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </motion.div>
+            ))}
+          </motion.div>
 
-          <div className="relative z-1 grid gap-5 lg:grid-cols-2">
-            <div className="relative min-h-[39rem] border border-n-1/10 rounded-3xl overflow-hidden">
-              <div className="absolute inset-0">
-                <img
-                  src={service2}
-                  className="h-full w-full object-cover"
-                  width={630}
-                  height={750}
-                  alt="robot"
-                />
+          {/* Image Card */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <div className="relative h-full min-h-[300px] bg-n-8/60 border border-n-6/40 rounded-2xl overflow-hidden">
+              {/* Image */}
+              <div className="h-full">
+                <img src={beyondWork} alt="Beyond Work" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-n-8 via-n-8/50 to-transparent" />
               </div>
-
-              <div className="absolute inset-0 flex flex-col justify-end p-8 pb-20 bg-gradient-to-b from-n-8/0 to-n-8/90 lg:p-15 lg:pb-20">
-                <h4 className="h4 mb-4">Tech Blogger</h4>
-                <p className="body-2 mb-[3rem] text-n-3">
-                  Stay updated with the latest trends in technology, insightful
-                  articles, and in-depth reviews. Join me on my journey through
-                  the tech world!
-                </p>
-              </div>
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 lg:bottom-10 lg:right-5 lg:left-auto lg:transform-none">
-                <Button
-                  href="https://aftabs.hashnode.dev/"
-                  className="text-white bg-n-8 px-6 py-2 rounded-lg hover:from-blue-600 hover:to-purple-600 focus:outline-none focus:from-blue-600 focus:to-purple-600"
-                >
-                  Explore Blogs
-                </Button>
-              </div>
-              <PhotoChatMessage />
-            </div>
-
-            <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem]">
-              <div className="py-12 px-4 xl:px-8">
-                <h4 className="h4 mb-4">Public Speaker</h4>
-                <p className="body-2 mb-[2rem] text-n-3">
-                  I love speaking at tech events and workshops, bringing a
-                  unique blend of humor and real-world insights to cloud-native
-                  and observability topics. My goal? To make every talk an
-                  engaging experience that leaves people informed, entertained,
-                  and excited to try something new.
-                </p>
-
-                <ul className="flex items-center justify-between">
-                  {brainwaveServicesIcons.map((item, index) => (
-                    <li
-                      key={index}
-                      className={`rounded-2xl flex items-center justify-center ${
-                        index === 2
-                          ? "w-[3rem] h-[3rem] p-0.25 bg-conic-gradient md:w-[4.5rem] md:h-[4.5rem]"
-                          : "flex w-10 h-10 bg-n-6 md:w-15 md:h-15"
-                      }`}
-                    >
-                      <div
-                        className={
-                          index === 2
-                            ? "flex items-center justify-center w-full h-full bg-n-7 rounded-[1rem]"
-                            : ""
-                        }
-                      >
-                        <img src={item} width={24} height={24} alt={item} />
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="relative h-[20rem] bg-n-8 rounded-xl overflow-hidden md:h-[25rem]">
-                <img
-                  src={service3}
-                  className="w-full h-full object-cover"
-                  style={{ objectPosition: "center 50%" }} // Adjust this value as needed
-                  width={520}
-                  height={400}
-                  alt="Scary robot"
-                />
-                <VideoChatMessage />
-                <VideoBar />
+              
+              {/* Overlay Content */}
+              <div className="absolute inset-0 flex items-center justify-center bg-n-8/60">
+                <div className="text-center p-6">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-color-1/20 rounded-full mb-4">
+                    <span className="w-2 h-2 rounded-full bg-color-4 animate-pulse" />
+                    <span className="text-xs font-mono text-color-1">Active in 5+ Communities</span>
+                  </div>
+                  <p className="text-sm text-n-2 max-w-xs mx-auto">
+                    Passionate about giving back to the tech community through organizing events, speaking, and mentoring.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-
-          <Gradient />
+          </motion.div>
         </div>
       </div>
-    </Section>
+    </section>
   );
 };
 

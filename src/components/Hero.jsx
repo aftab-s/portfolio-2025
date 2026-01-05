@@ -1,177 +1,305 @@
 import { motion } from "framer-motion";
 import { socials } from "../constants";
+import RaysBackground from "./RaysBackground";
+import AuroraTextEffect from "./AuroraTextEffect";
+import { useState, useEffect } from "react";
 
 const Hero = () => {
+  const [typedText, setTypedText] = useState("");
+  const fullText = "portfolio.init()";
+
+  useEffect(() => {
+    let index = 0;
+    const timer = setInterval(() => {
+      if (index <= fullText.length) {
+        setTypedText(fullText.slice(0, index));
+        index++;
+      } else {
+        clearInterval(timer);
+      }
+    }, 100);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <section id="hero" className="min-h-[100dvh] flex items-center justify-center relative overflow-hidden pt-20 pb-12 lg:pt-0 lg:pb-0">
-      {/* Futuristic background */}
-      <div className="absolute inset-0">
-        {/* Dot matrix */}
-        <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: `radial-gradient(circle, rgba(172, 106, 255, 1) 1px, transparent 1px)`,
-          backgroundSize: '30px 30px'
-        }} />
-        
-        {/* Horizontal scan lines */}
-        <div className="absolute inset-0 opacity-[0.02]" style={{
-          backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(172, 106, 255, 0.1) 2px, rgba(172, 106, 255, 0.1) 4px)`,
-        }} />
-      </div>
-      
-      {/* Gradient blobs */}
-      <motion.div 
-        animate={{ 
-          scale: [1, 1.2, 1],
-          opacity: [0.08, 0.15, 0.08]
+    <section id="hero" className="min-h-[100dvh] flex items-center justify-center relative overflow-hidden pt-28 pb-12 lg:pt-16 lg:pb-16">
+      {/* Rays Background */}
+      <RaysBackground
+        theme="dark"
+        animated={true}
+        animationSpeed={1}
+        opacity={0.7}
+        colors={{
+          purple: '#AC6AFF',
+          yellow: '#FFC876',
+          pink: '#FF98E2',
+          teal: '#7ADB78',
+          blue: '#858DFF',
         }}
-        transition={{ duration: 8, repeat: Infinity }}
-        className="absolute top-1/4 -left-32 w-[300px] md:w-[400px] lg:w-[500px] h-[300px] md:h-[400px] lg:h-[500px] bg-color-1 rounded-full blur-[150px] lg:blur-[200px]" 
-      />
-      <motion.div 
-        animate={{ 
-          scale: [1.2, 1, 1.2],
-          opacity: [0.08, 0.12, 0.08]
-        }}
-        transition={{ duration: 10, repeat: Infinity }}
-        className="absolute bottom-1/4 -right-32 w-[300px] md:w-[400px] lg:w-[500px] h-[300px] md:h-[400px] lg:h-[500px] bg-color-5 rounded-full blur-[150px] lg:blur-[180px]" 
+        blurAmount={6}
       />
       
       <div className="container relative z-10 px-6 md:px-12 lg:px-20">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Terminal-style greeting */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8"
-          >
-            <div className="h-px w-6 sm:w-8 bg-gradient-to-r from-transparent to-color-1" />
-            <span className="text-[10px] sm:text-xs font-mono tracking-[0.2em] sm:tracking-[0.3em] uppercase text-color-1">// Hello World</span>
-            <div className="h-px w-6 sm:w-8 bg-gradient-to-l from-transparent to-color-1" />
-          </motion.div>
-          
-          {/* Name */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold mb-4 sm:mb-6"
-          >
-            <span className="text-n-1">I'm </span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-color-1 via-color-5 to-color-1">Aftab</span>
-          </motion.h1>
-          
-          {/* Role with animated underline */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-8 sm:mb-10"
-          >
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-n-3 font-light mb-4 px-4 sm:px-0">
-              Crafting Experiences, I Aspire to Embrace.
-            </p>
-            <div className="flex justify-center">
-              <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: "150px" }}
-                transition={{ duration: 1, delay: 0.5 }}
-                className="h-1 rounded-full bg-gradient-to-r from-color-1 via-color-5 to-color-1 sm:w-[200px]"
-              />
-            </div>
-          </motion.div>
-          
-          {/* Tags with futuristic styling */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 px-2 sm:px-0"
-          >
-            {["Cloud", "DevOps", "Security", "Design", "Community"].map((tag, index) => (
-              <motion.span
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.4 + index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -2 }}
-                className="group relative px-3 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm border border-n-6/50 rounded-full bg-n-8/50 backdrop-blur-sm hover:border-color-1/50 transition-all duration-300"
-              >
-                <span className="relative z-10 text-n-3 group-hover:text-color-1 transition-colors">{tag}</span>
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-color-1/10 to-color-5/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </motion.span>
-            ))}
-          </motion.div>
-          
-          {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-10 sm:mb-16"
-          >
-            <a
-              href="#about-me"
-              className="group relative px-6 sm:px-8 py-3 sm:py-4 overflow-hidden rounded-full w-full sm:w-auto max-w-[280px]"
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Left Column - Content */}
+          <div className="text-center lg:text-left">
+            {/* Terminal-style greeting */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="inline-flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8"
             >
-              {/* Animated gradient border */}
-              <div className="absolute inset-0 bg-gradient-to-r from-color-1 via-color-5 to-color-1 rounded-full" />
-              <div className="absolute inset-px bg-n-8 rounded-full group-hover:bg-transparent transition-colors duration-300" />
-              <span className="relative z-10 text-sm font-medium text-n-1 group-hover:text-white transition-colors flex items-center justify-center gap-2">
-                Learn More About Me
-                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <span className="text-[10px] sm:text-xs font-mono tracking-[0.2em] sm:tracking-[0.3em] uppercase text-color-1">// Hello World</span>
+              <div className="h-px w-6 sm:w-8 bg-gradient-to-l from-transparent to-color-1" />
+            </motion.div>
+            
+            {/* Name with Aurora Effect */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="mb-4 sm:mb-6"
+            >
+              <h1 className="flex items-baseline gap-2 sm:gap-3 justify-center lg:justify-start text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-semibold">
+                <span className="text-n-1">I'm</span>
+                <AuroraTextEffect
+                  text="Aftab"
+                  fontSize="inherit"
+                  colors={{
+                    first: "#AC6AFF",
+                    second: "#FFC876",
+                    third: "#858DFF",
+                    fourth: "#FF98E2",
+                  }}
+                  animationSpeed={6}
+                />
+              </h1>
+            </motion.div>
+            
+            {/* Role with animated underline */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mb-8 sm:mb-10"
+            >
+              <p className="text-base sm:text-lg md:text-xl text-n-3 font-light mb-4">
+                Crafting Experiences, I Aspire to Embrace.
+              </p>
+              <div className="flex justify-center lg:justify-start">
+                <motion.div
+                  initial={{ width: 0 }}
+                  animate={{ width: "150px" }}
+                  transition={{ duration: 1, delay: 0.5 }}
+                  className="h-1 rounded-full bg-gradient-to-r from-color-1 via-color-5 to-color-1"
+                />
+              </div>
+            </motion.div>
+            
+            {/* Tags with futuristic styling */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3 mb-8 sm:mb-10"
+            >
+              {["Cloud", "DevOps", "Security", "Design", "Community"].map((tag, index) => (
+                <motion.span
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.4 + index * 0.1 }}
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  className="group relative px-3 sm:px-4 py-2 text-xs sm:text-sm border border-n-6/50 rounded-full bg-n-8/50 backdrop-blur-sm hover:border-color-1/50 transition-all duration-300"
+                >
+                  <span className="relative z-10 text-n-3 group-hover:text-color-1 transition-colors">{tag}</span>
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-color-1/10 to-color-5/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </motion.span>
+              ))}
+            </motion.div>
+            
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="hidden md:flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3 sm:gap-4 mb-8"
+            >
+              <a
+                href="#about-me"
+                className="group inline-flex items-center gap-3 px-5 py-3 bg-n-8/60 border border-n-6/50 rounded-xl hover:border-color-1/40 transition-all duration-300 w-full sm:w-auto justify-center"
+              >
+                <span className="text-sm text-n-1 font-medium group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-color-1 group-hover:to-color-5 transition-all">
+                  Learn More
+                </span>
+                <svg 
+                  className="w-4 h-4 text-n-4 group-hover:text-color-1 group-hover:translate-y-1 transition-all" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                 </svg>
-              </span>
-            </a>
-            <a
-              href="#contact"
-              className="group px-6 sm:px-8 py-3 sm:py-4 border border-n-6/50 rounded-full text-sm font-medium text-n-1 bg-n-8/50 backdrop-blur-sm hover:border-color-1/50 hover:bg-n-7/50 transition-all duration-300 w-full sm:w-auto max-w-[280px] flex items-center justify-center gap-2"
-            >
-              Get in Touch
-              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
-          </motion.div>
-          
-          {/* Social Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="flex items-center justify-center gap-3 sm:gap-4"
-          >
-            {socials.map((social, index) => (
-              <motion.a
-                key={social.id}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.6 + index * 0.1 }}
-                whileHover={{ scale: 1.1, y: -3 }}
-                className="group relative w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center"
+              </a>
+              <a
+                href="#contact"
+                className="group inline-flex items-center gap-3 px-5 py-3 bg-n-8/60 border border-n-6/50 rounded-xl hover:border-color-1/40 transition-all duration-300 w-full sm:w-auto justify-center"
               >
-                {/* Glow effect */}
-                <div className="absolute inset-0 rounded-xl bg-color-1/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
-                {/* Icon container */}
-                <div className="relative w-full h-full rounded-xl bg-n-8 border border-n-6/50 flex items-center justify-center group-hover:border-color-1/50 transition-all duration-300">
-                  <img
-                    src={social.iconUrl}
-                    alt={social.title}
-                    className="w-4 h-4 sm:w-5 sm:h-5 opacity-60 group-hover:opacity-100 transition-opacity"
-                  />
+                <span className="text-sm text-n-1 font-medium group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-color-1 group-hover:to-color-5 transition-all">
+                  Get in Touch
+                </span>
+                <svg 
+                  className="w-4 h-4 text-n-4 group-hover:text-color-1 group-hover:translate-x-1 transition-all" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </motion.div>
+            
+            {/* Social Links */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="flex items-center justify-center lg:justify-start gap-3 sm:gap-4"
+            >
+              {socials.map((social, index) => (
+                <motion.a
+                  key={social.id}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.6 + index * 0.1 }}
+                  whileHover={{ scale: 1.1, y: -3 }}
+                  className="group relative w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center"
+                >
+                  {/* Glow effect */}
+                  <div className="absolute inset-0 rounded-xl bg-color-1/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  
+                  {/* Icon container */}
+                  <div className="relative w-full h-full rounded-xl bg-n-8 border border-n-6/50 flex items-center justify-center group-hover:border-color-1/50 transition-all duration-300">
+                    <img
+                      src={social.iconUrl}
+                      alt={social.title}
+                      className="w-4 h-4 sm:w-5 sm:h-5 opacity-60 group-hover:opacity-100 transition-opacity"
+                    />
+                  </div>
+                </motion.a>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Right Column - Terminal Window */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="relative"
+          >
+            {/* Terminal Container */}
+            <div className="relative rounded-lg overflow-hidden border border-n-6/50 bg-n-8/80 backdrop-blur-md shadow-2xl">
+              {/* Terminal Header */}
+              <div className="flex items-center justify-between px-4 py-3 bg-n-7/90 border-b border-n-6/50">
+                <div className="flex items-center gap-2">
+                  <div className="flex gap-1.5">
+                    <div className="w-3 h-3 rounded-full bg-color-3" />
+                    <div className="w-3 h-3 rounded-full bg-color-2" />
+                    <div className="w-3 h-3 rounded-full bg-color-4" />
+                  </div>
+                  <span className="text-xs font-mono text-n-3 ml-2">~/aftab</span>
                 </div>
-              </motion.a>
-            ))}
+                <div className="text-xs font-mono text-n-4">bash</div>
+              </div>
+
+              {/* Terminal Content */}
+              <div className="p-6 font-mono text-sm space-y-3 min-h-[400px] lg:min-h-[450px]">
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                >
+                  <span className="text-color-4">$</span>
+                  <span className="text-n-2 ml-2">{typedText}</span>
+                  <motion.span
+                    animate={{ opacity: [1, 0] }}
+                    transition={{ duration: 0.8, repeat: Infinity }}
+                    className="text-color-1"
+                  >
+                    |
+                  </motion.span>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1.5 }}
+                  className="space-y-2 text-n-3"
+                >
+                  <div className="text-color-1">// Initializing portfolio...</div>
+                  <div className="text-color-4">✓</div>
+                  <div className="pl-4">
+                    <div className="text-n-2">Name: <span className="text-color-1">Aftab S</span></div>
+                    <div className="text-n-2">Role: <span className="text-color-5">DevOps Engineer</span></div>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 2.2 }}
+                  className="space-y-2 pt-2"
+                >
+                  <div className="text-color-1">// Interests:</div>
+                  <div className="pl-4 space-y-1 text-n-3">
+                    <div><span className="text-color-4">▸</span> Cloud & Infrastructure</div>
+                    <div><span className="text-color-4">▸</span> Container Orchestration</div>
+                    <div><span className="text-color-4">▸</span> Observability</div>
+                    <div><span className="text-color-4">▸</span> Community Building & OSS</div>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 2.9 }}
+                  className="pt-2"
+                >
+                  <div className="text-color-4">
+                    ✓ Portfolio ready!
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 3.5 }}
+                  className="pt-2"
+                >
+                  <span className="text-color-4">$</span>
+                  <motion.span
+                    animate={{ opacity: [1, 0] }}
+                    transition={{ duration: 0.8, repeat: Infinity, delay: 3.5 }}
+                    className="text-color-1 ml-2"
+                  >
+                    |
+                  </motion.span>
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Glow effect behind terminal */}
+            <div className="absolute inset-0 -z-10 bg-gradient-to-br from-color-1/10 via-color-5/10 to-color-6/10 blur-3xl rounded-lg" />
           </motion.div>
         </div>
       </div>
       
-      {/* Scroll indicator - Hidden on mobile */}
+      {/* Scroll indicator - Hidden on mobile, centered below grid on desktop */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

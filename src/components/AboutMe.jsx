@@ -100,19 +100,19 @@ const AboutMe = () => {
             >
               <a
                 href="#projects"
-                className="group flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-n-8/70 border border-n-6/40 rounded-xl hover:border-color-1/40 transition-all duration-300"
+                className="group flex-1 inline-flex items-center justify-center gap-3 px-5 py-3 bg-n-8/60 border border-n-6/50 rounded-xl hover:border-color-1/40 transition-all duration-300"
               >
-                <span className="text-sm text-n-3 group-hover:text-n-1 transition-colors">View Projects</span>
+                <span className="text-sm text-n-1 font-medium group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-color-1 group-hover:to-color-5 transition-all">View Projects</span>
                 <svg className="w-4 h-4 text-n-4 group-hover:text-color-1 group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </a>
               <a
                 href="#contact"
-                className="group flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-color-1/10 to-color-5/10 border border-color-1/30 rounded-xl hover:from-color-1/20 hover:to-color-5/20 transition-all duration-300"
+                className="group flex-1 inline-flex items-center justify-center gap-3 px-5 py-3 bg-n-8/60 border border-n-6/50 rounded-xl hover:border-color-1/40 transition-all duration-300"
               >
-                <span className="text-sm text-n-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-color-1 group-hover:to-color-5 transition-all">Let's Connect</span>
-                <svg className="w-4 h-4 text-color-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <span className="text-sm text-n-1 font-medium group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-color-1 group-hover:to-color-5 transition-all">Let's Connect</span>
+                <svg className="w-4 h-4 text-n-4 group-hover:text-color-1 group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </a>

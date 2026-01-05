@@ -6,7 +6,6 @@ import WorkExperience from "./components/WorkExperience";
 import Roadmap from "./components/Roadmap";
 import Benefits from "./components/Benefits";
 import Services from "./components/Services";
-import BeyondWork from "./components/BeyondWork";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -22,7 +21,6 @@ const App = () => {
         <Roadmap />
         <Benefits />
         <Services />
-        <BeyondWork />
       </main>
       <Footer />
       <ScrollToTop />

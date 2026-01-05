@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { benefits } from "../constants";
+import { GlowingCards, GlowingCard } from "./GlowingCards";
 
 const Benefits = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -145,31 +146,41 @@ const Benefits = () => {
           <div className={`absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-n-8 to-transparent z-10 pointer-events-none transition-opacity duration-300 ${canScrollRight ? 'opacity-100' : 'opacity-0'}`} />
           
           {/* Scrollable Carousel */}
-          <div
-            ref={carouselRef}
-            className="flex gap-4 overflow-x-auto scrollbar-hide pb-4 -mb-4 scroll-smooth"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-            onScroll={() => {
-              if (carouselRef.current) {
-                const scrollPos = carouselRef.current.scrollLeft;
-                const cardWidth = 260 + 16;
-                setActiveIndex(Math.round(scrollPos / cardWidth));
-              }
-            }}
+          <GlowingCards
+            enableGlow={true}
+            glowRadius={15}
+            glowOpacity={0.8}
+            gap="1rem"
           >
-            {benefits.map((cert, index) => (
-              <motion.a
-                key={cert.id}
-                href={cert.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className="group flex-shrink-0 w-[240px] sm:w-[260px]"
-              >
-                <div className="relative h-full bg-n-8/70 border border-n-6/40 rounded-2xl overflow-hidden hover:border-color-1/40 transition-all duration-300">
+            <div
+              ref={carouselRef}
+              className="flex gap-4 overflow-x-auto scrollbar-hide pb-4 -mb-4 scroll-smooth"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              onScroll={() => {
+                if (carouselRef.current) {
+                  const scrollPos = carouselRef.current.scrollLeft;
+                  const cardWidth = 260 + 16;
+                  setActiveIndex(Math.round(scrollPos / cardWidth));
+                }
+              }}
+            >
+              {benefits.map((cert, index) => (
+                <GlowingCard
+                  key={cert.id}
+                  glowColor="#AC6AFF"
+                  className="flex-shrink-0 w-[240px] sm:w-[260px]"
+                >
+                  <motion.a
+                    href={cert.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.05 }}
+                    className="group block h-full"
+                  >
+                    <div className="relative h-full bg-n-8/70 border border-n-6/40 rounded-2xl overflow-hidden hover:border-color-1/40 transition-all duration-300">
                   {/* Gradient Accent Top */}
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-color-1 to-color-5 opacity-60" />
                   
@@ -209,8 +220,10 @@ const Benefits = () => {
                   </div>
                 </div>
               </motion.a>
-            ))}
-          </div>
+            </GlowingCard>
+          ))}
+        </div>
+      </GlowingCards>
         </div>
 
         {/* Certification Stats - Compact */}

@@ -1,13 +1,14 @@
 ﻿import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { workExperiences } from "../constants";
+import { GlowingCards, GlowingCard } from "./GlowingCards";
 
 const WorkExperience = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeExp = workExperiences[activeIndex];
 
   return (
-    <section id="work" className="py-20 lg:py-28 relative overflow-hidden">
+    <section id="work-experience" className="py-20 lg:py-28 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 opacity-[0.015]" style={{
         backgroundImage: `linear-gradient(rgba(172, 106, 255, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(172, 106, 255, 0.5) 1px, transparent 1px)`,
@@ -59,25 +60,33 @@ const WorkExperience = () => {
         </div>
 
         {/* Main Content */}
-        <div className="grid lg:grid-cols-[340px_1fr] gap-6 lg:gap-8">
-          
-          {/* Left - Role Selector */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="space-y-3"
-          >
+        <GlowingCards
+          enableGlow={true}
+          glowRadius={20}
+          glowOpacity={0.75}
+        >
+          <div className="grid lg:grid-cols-[340px_1fr] gap-6 lg:gap-8">
+            
+            {/* Left - Role Selector */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-3"
+            >
             {workExperiences.map((exp, index) => (
-              <motion.button
+              <GlowingCard
                 key={exp.id}
-                onClick={() => setActiveIndex(index)}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className={`group w-full flex items-center gap-4 p-4 rounded-xl border transition-all duration-300 text-left ${
-                  activeIndex === index
+                glowColor="#858DFF"
+              >
+                <motion.button
+                  onClick={() => setActiveIndex(index)}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.05 }}
+                  className={`group w-full flex items-center gap-4 p-4 rounded-xl border transition-all duration-300 text-left ${
+                    activeIndex === index
                     ? 'bg-gradient-to-r from-color-1/10 to-color-5/10 border-color-1/40'
                     : 'bg-n-8/60 border-n-6/40 hover:border-n-5/60'
                 }`}
@@ -112,6 +121,7 @@ const WorkExperience = () => {
                     : 'bg-n-6'
                 }`} />
               </motion.button>
+              </GlowingCard>
             ))}
             
             {/* Timeline indicator */}
@@ -133,13 +143,14 @@ const WorkExperience = () => {
           </motion.div>
 
           {/* Right - Detail Card */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
-            <div className="relative h-full min-h-[400px] bg-n-8/60 border border-n-6/40 rounded-2xl overflow-hidden">
+          <GlowingCard glowColor="#AC6AFF">
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="relative h-full min-h-[400px] bg-n-8/60 border border-n-6/40 rounded-2xl overflow-hidden">
               {/* Corner Decorations */}
               <svg className="absolute top-0 left-0 w-20 h-20 text-color-1/20" viewBox="0 0 80 80">
                 <path d="M0 20 L0 0 L20 0" fill="none" stroke="currentColor" strokeWidth="1" />
@@ -260,7 +271,9 @@ const WorkExperience = () => {
               </AnimatePresence>
             </div>
           </motion.div>
-        </div>
+        </GlowingCard>
+      </div>
+    </GlowingCards>
       </div>
     </section>
   );

@@ -106,56 +106,57 @@ const Footer = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="max-w-lg mx-auto space-y-3 sm:space-y-4"
+                className="max-w-2xl mx-auto space-y-5 sm:space-y-6"
               >
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                  <div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                  <div className="relative group">
+                    <div className="absolute inset-0 bg-gradient-to-r from-color-1 to-color-5 rounded-xl opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-300" />
                     <input
                       type="text"
                       name="name"
                       placeholder="Your Name"
                       required
-                      className="w-full px-4 py-3 bg-n-7/50 border border-n-6/50 rounded-xl text-sm sm:text-base text-n-1 placeholder-n-4 focus:outline-none focus:border-color-1/50 transition-all"
+                      className="relative w-full px-5 py-3.5 bg-n-8/60 backdrop-blur-xl border border-n-6/50 rounded-xl text-sm text-n-1 placeholder-n-4 focus:outline-none focus:border-color-1/50 focus:bg-n-8/80 transition-all duration-300"
                     />
                   </div>
-                  <div>
+                  <div className="relative group">
+                    <div className="absolute inset-0 bg-gradient-to-r from-color-1 to-color-5 rounded-xl opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-300" />
                     <input
                       type="email"
                       name="email"
                       placeholder="Your Email"
                       required
-                      className="w-full px-4 py-3 bg-n-7/50 border border-n-6/50 rounded-xl text-sm sm:text-base text-n-1 placeholder-n-4 focus:outline-none focus:border-color-1/50 transition-all"
+                      className="relative w-full px-5 py-3.5 bg-n-8/60 backdrop-blur-xl border border-n-6/50 rounded-xl text-sm text-n-1 placeholder-n-4 focus:outline-none focus:border-color-1/50 focus:bg-n-8/80 transition-all duration-300"
                     />
-                    <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-400 text-xs mt-1" />
+                    <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-400 text-xs mt-1.5" />
                   </div>
                 </div>
                 
-                <div>
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-r from-color-1 to-color-5 rounded-xl opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-300" />
                   <textarea
                     name="message"
                     placeholder="Your Message"
                     required
-                    rows="4"
-                    className="w-full px-4 py-3 bg-n-7/50 border border-n-6/50 rounded-xl text-sm sm:text-base text-n-1 placeholder-n-4 focus:outline-none focus:border-color-1/50 transition-all resize-none"
+                    rows="5"
+                    className="relative w-full px-5 py-3.5 bg-n-8/60 backdrop-blur-xl border border-n-6/50 rounded-xl text-sm text-n-1 placeholder-n-4 focus:outline-none focus:border-color-1/50 focus:bg-n-8/80 transition-all duration-300 resize-none"
                   />
-                  <ValidationError prefix="Message" field="message" errors={state.errors} className="text-red-400 text-xs mt-1" />
+                  <ValidationError prefix="Message" field="message" errors={state.errors} className="text-red-400 text-xs mt-1.5" />
                 </div>
 
                 <button
                   type="submit"
                   disabled={state.submitting}
-                  className="group relative w-full px-6 sm:px-8 py-3 sm:py-4 overflow-hidden rounded-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="group inline-flex items-center justify-center w-full gap-3 px-5 py-3 bg-n-8/60 border border-n-6/50 rounded-xl hover:border-color-1/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-color-1 to-color-5" />
-                  <div className="absolute inset-px bg-n-8 rounded-xl group-hover:bg-transparent transition-colors duration-300" />
-                  <span className="relative z-10 text-sm sm:text-base font-medium text-n-1 group-hover:text-white transition-colors flex items-center justify-center gap-2">
+                  <span className="text-sm font-medium text-n-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-color-1 group-hover:to-color-5 transition-all duration-300">
                     {state.submitting ? "Sending..." : "Send Message"}
-                    {!state.submitting && (
-                      <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    )}
                   </span>
+                  {!state.submitting && (
+                    <svg className="w-4 h-4 text-n-4 group-hover:text-color-1 group-hover:translate-x-1 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  )}
                 </button>
 
                 {/* Success message */}
@@ -163,7 +164,7 @@ const Footer = () => {
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="flex items-center gap-2 px-4 py-3 bg-color-4/20 border border-color-4/40 rounded-xl"
+                    className="flex items-center gap-3 px-5 py-3.5 bg-color-4/10 backdrop-blur-xl border border-color-4/30 rounded-xl"
                   >
                     <svg className="w-5 h-5 text-color-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />

@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { roadmap } from "../constants";
+import { GlowingCards, GlowingCard } from "./GlowingCards";
 
 const Roadmap = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -139,24 +140,33 @@ const Roadmap = () => {
           <div className={`absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-n-8 to-transparent z-10 pointer-events-none transition-opacity duration-300 ${canScrollRight ? 'opacity-100' : 'opacity-0'}`} />
           
           {/* Scrollable Carousel */}
-          <div
-            ref={carouselRef}
-            className="flex gap-4 overflow-x-auto scrollbar-hide pb-4 -mb-4 scroll-smooth"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-            onScroll={() => {
-              if (carouselRef.current) {
-                const scrollPos = carouselRef.current.scrollLeft;
-                const cardWidth = 350 + 16;
-                setActiveIndex(Math.round(scrollPos / cardWidth));
-              }
-            }}
+          <GlowingCards
+            enableGlow={true}
+            glowRadius={16}
+            glowOpacity={0.8}
           >
-            {roadmap.map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+            <div
+              ref={carouselRef}
+              className="flex gap-4 overflow-x-auto scrollbar-hide pb-4 -mb-4 scroll-smooth"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              onScroll={() => {
+                if (carouselRef.current) {
+                  const scrollPos = carouselRef.current.scrollLeft;
+                  const cardWidth = 350 + 16;
+                  setActiveIndex(Math.round(scrollPos / cardWidth));
+                }
+              }}
+            >
+              {roadmap.map((project, index) => (
+                <GlowingCard
+                  key={project.id}
+                  glowColor="#FF98E2"
+                  className="flex-shrink-0 w-[320px] sm:w-[350px]"
+                >
+                  <motion.div
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 className="group flex-shrink-0 w-[320px] sm:w-[350px]"
               >
@@ -244,8 +254,10 @@ const Roadmap = () => {
                   </div>
                 </div>
               </motion.div>
-            ))}
-          </div>
+            </GlowingCard>
+          ))}
+        </div>
+      </GlowingCards>
         </div>
 
         {/* GitHub CTA - Compact */}

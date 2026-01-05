@@ -15,7 +15,7 @@ const Footer = () => {
     }
   }, [state.succeeded]);
   return (
-    <footer id="contact" className="py-20 lg:py-32 relative overflow-hidden">
+    <footer id="contact" className="py-16 lg:py-24 relative overflow-hidden">
       {/* Futuristic background */}
       <div className="absolute inset-0">
         {/* Dot matrix */}
@@ -37,7 +37,7 @@ const Footer = () => {
           opacity: [0.1, 0.2, 0.1]
         }}
         transition={{ duration: 8, repeat: Infinity }}
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-r from-color-1 to-color-5 rounded-full blur-[200px]" 
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] md:w-[600px] lg:w-[800px] h-[200px] md:h-[300px] lg:h-[400px] bg-gradient-to-r from-color-1 to-color-5 rounded-full blur-[150px] lg:blur-[200px]" 
       />
       
       <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
@@ -48,7 +48,7 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative p-8 lg:p-16 bg-gradient-to-br from-n-7/60 to-n-8/80 backdrop-blur-xl border border-n-6/40 rounded-3xl overflow-hidden mb-16"
+            className="relative p-6 sm:p-8 lg:p-12 xl:p-16 bg-gradient-to-br from-n-7/60 to-n-8/80 backdrop-blur-xl border border-n-6/40 rounded-2xl sm:rounded-3xl overflow-hidden mb-12 lg:mb-16"
           >
             {/* Corner accents */}
             <svg className="absolute top-0 left-0 w-32 h-32 text-color-1/20" viewBox="0 0 100 100">
@@ -84,7 +84,7 @@ const Footer = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="text-4xl md:text-5xl lg:text-6xl font-semibold text-n-1 mb-6"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-n-1 mb-4 sm:mb-6"
               >
                 Let's Work <span className="text-transparent bg-clip-text bg-gradient-to-r from-color-1 to-color-5">Together</span>
               </motion.h2>
@@ -94,7 +94,7 @@ const Footer = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="text-n-3 text-lg max-w-2xl mx-auto mb-10"
+                className="text-n-3 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto mb-8 sm:mb-10 px-2 sm:px-0"
               >
                 Have a project in mind or just want to chat? I'm always open to discussing new opportunities.
               </motion.p>
@@ -106,16 +106,16 @@ const Footer = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="max-w-lg mx-auto space-y-4"
+                className="max-w-lg mx-auto space-y-3 sm:space-y-4"
               >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div>
                     <input
                       type="text"
                       name="name"
                       placeholder="Your Name"
                       required
-                      className="w-full px-4 py-3 bg-n-7/50 border border-n-6/50 rounded-xl text-n-1 placeholder-n-4 focus:outline-none focus:border-color-1/50 transition-all"
+                      className="w-full px-4 py-3 bg-n-7/50 border border-n-6/50 rounded-xl text-sm sm:text-base text-n-1 placeholder-n-4 focus:outline-none focus:border-color-1/50 transition-all"
                     />
                   </div>
                   <div>
@@ -124,7 +124,7 @@ const Footer = () => {
                       name="email"
                       placeholder="Your Email"
                       required
-                      className="w-full px-4 py-3 bg-n-7/50 border border-n-6/50 rounded-xl text-n-1 placeholder-n-4 focus:outline-none focus:border-color-1/50 transition-all"
+                      className="w-full px-4 py-3 bg-n-7/50 border border-n-6/50 rounded-xl text-sm sm:text-base text-n-1 placeholder-n-4 focus:outline-none focus:border-color-1/50 transition-all"
                     />
                     <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-400 text-xs mt-1" />
                   </div>
@@ -136,7 +136,7 @@ const Footer = () => {
                     placeholder="Your Message"
                     required
                     rows="4"
-                    className="w-full px-4 py-3 bg-n-7/50 border border-n-6/50 rounded-xl text-n-1 placeholder-n-4 focus:outline-none focus:border-color-1/50 transition-all resize-none"
+                    className="w-full px-4 py-3 bg-n-7/50 border border-n-6/50 rounded-xl text-sm sm:text-base text-n-1 placeholder-n-4 focus:outline-none focus:border-color-1/50 transition-all resize-none"
                   />
                   <ValidationError prefix="Message" field="message" errors={state.errors} className="text-red-400 text-xs mt-1" />
                 </div>
@@ -144,11 +144,11 @@ const Footer = () => {
                 <button
                   type="submit"
                   disabled={state.submitting}
-                  className="group relative w-full px-8 py-4 overflow-hidden rounded-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="group relative w-full px-6 sm:px-8 py-3 sm:py-4 overflow-hidden rounded-xl disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-color-1 to-color-5" />
                   <div className="absolute inset-px bg-n-8 rounded-xl group-hover:bg-transparent transition-colors duration-300" />
-                  <span className="relative z-10 text-base font-medium text-n-1 group-hover:text-white transition-colors flex items-center justify-center gap-2">
+                  <span className="relative z-10 text-sm sm:text-base font-medium text-n-1 group-hover:text-white transition-colors flex items-center justify-center gap-2">
                     {state.submitting ? "Sending..." : "Send Message"}
                     {!state.submitting && (
                       <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -183,15 +183,15 @@ const Footer = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col md:flex-row items-center justify-between gap-8"
+            className="flex flex-col items-center gap-6 sm:gap-8 md:flex-row md:justify-between"
           >
             {/* Logo/Name */}
             <a href="#hero" className="group flex items-center">
-              <img src={logo} alt="AM Logo" className="h-12 w-auto group-hover:opacity-80 transition-opacity" />
+              <img src={logo} alt="AM Logo" className="h-10 sm:h-12 w-auto group-hover:opacity-80 transition-opacity" />
             </a>
 
             {/* Social links */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3 sm:gap-4">
               {socials.map((social, index) => (
                 <motion.a
                   key={social.id}
@@ -203,7 +203,7 @@ const Footer = () => {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ scale: 1.1, y: -3 }}
-                  className="group relative w-12 h-12 flex items-center justify-center"
+                  className="group relative w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center"
                   title={social.title}
                 >
                   {/* Glow effect */}
@@ -214,7 +214,7 @@ const Footer = () => {
                     <img
                       src={social.iconUrl}
                       alt={social.title}
-                      className="w-5 h-5 opacity-60 group-hover:opacity-100 transition-opacity"
+                      className="w-4 h-4 sm:w-5 sm:h-5 opacity-60 group-hover:opacity-100 transition-opacity"
                     />
                   </div>
                 </motion.a>
@@ -222,7 +222,7 @@ const Footer = () => {
             </div>
 
             {/* Copyright */}
-            <p className="text-n-4 text-sm font-mono">
+            <p className="text-n-4 text-xs sm:text-sm font-mono text-center">
               © {new Date().getFullYear()} <span className="text-n-3">Aftab</span> All rights reserved.
             </p>
           </motion.div>

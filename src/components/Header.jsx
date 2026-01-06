@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 import { navigation } from "../constants";
-import logo from "../assets/AM-logo.png";
+import { logo } from "../assets";
 
 const Header = () => {
   const [openNavigation, setOpenNavigation] = useState(false);

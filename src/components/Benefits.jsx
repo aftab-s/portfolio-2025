@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { benefits } from "../constants";
+import { certifications } from "../constants";
 import { GlowingCards, GlowingCard } from "./GlowingCards";
 
 const Benefits = () => {
@@ -46,7 +46,7 @@ const Benefits = () => {
   };
 
   // Calculate number of visible dots (group certifications into pages of 4)
-  const dotsCount = Math.ceil(benefits.length / 4);
+  const dotsCount = Math.ceil(certifications.length / 4);
 
   return (
     <section id="certifications" className="py-16 lg:py-20 relative overflow-hidden">
@@ -164,7 +164,7 @@ const Benefits = () => {
                 }
               }}
             >
-              {benefits.map((cert, index) => (
+              {certifications.map((cert, index) => (
                 <GlowingCard
                   key={cert.id}
                   glowColor="#AC6AFF"
@@ -236,7 +236,7 @@ const Benefits = () => {
           <div className="inline-flex items-center gap-6 px-5 py-3 bg-n-8/60 border border-n-6/50 rounded-xl">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-color-4 animate-pulse" />
-              <span className="text-sm text-n-3">{benefits.length} Certifications</span>
+              <span className="text-sm text-n-3">{certifications.length} Certifications</span>
             </div>
             <div className="w-px h-4 bg-n-6" />
             <span className="text-xs text-n-4 font-mono">Verified & Industry Recognized</span>

@@ -1,5 +1,5 @@
 ﻿import { motion } from "framer-motion";
-import { collabApps, collabContent } from "../constants";
+import { techTools, coreCompetencies } from "../constants";
 
 const Collaboration = () => {
   const skillCategories = [
@@ -127,7 +127,7 @@ const Collaboration = () => {
             </div>
             
             <div className="grid grid-cols-4 gap-2">
-              {collabApps.map((app, index) => (
+              {techTools.map((app, index) => (
                 <motion.div
                   key={app.id}
                   initial={{ opacity: 0, scale: 0.8 }}
@@ -150,7 +150,7 @@ const Collaboration = () => {
             {/* Decorative bottom */}
             <div className="mt-5 pt-4 border-t border-n-6/30">
               <div className="flex items-center justify-between text-xs text-n-5">
-                <span>{collabApps.length} tools</span>
+                <span>{techTools.length} tools</span>
                 <span className="font-mono">v2.0.25</span>
               </div>
             </div>
@@ -165,7 +165,7 @@ const Collaboration = () => {
           className="mt-4 p-5 bg-gradient-to-r from-color-1/5 via-transparent to-color-5/5 border border-n-6/30 rounded-2xl"
         >
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
-            {collabContent.map((item, index) => (
+            {coreCompetencies.map((item, index) => (
               <motion.span
                 key={item.id}
                 initial={{ opacity: 0 }}

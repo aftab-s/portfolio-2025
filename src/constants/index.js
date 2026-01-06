@@ -1,55 +1,42 @@
+// Asset imports
 import {
-  benefitIcon1,
-  benefitIcon2,
-  benefitIcon3,
-  benefitIcon4,
-  benefitImage2,
-  benefitImage3,
-  benefitImage4,
-  benefitImage5,
-  chromecast,
-  disc02,
+  certIcon1,
+  certIcon2,
+  certIcon3,
+  certIcon4,
+  certTerraform,
+  certGithub,
+  certGremlin,
+  certCka,
+  certCard1,
+  certCard2,
+  certCard3,
   aws,
-  discordBlack,
-  facebook,
+  iconDiscord,
+  iconLinkedin,
   terraform,
-  file02,
   docker,
-  homeSmile,
-  instagram,
-  notification2,
-  notification3,
-  notification4,
+  iconInstagram,
   kubernetes,
   blender,
-  plusSquare,
   grafana,
   prometheus,
-  recording01,
-  recording03,
-  roadmap1,
-  roadmap2,
-  roadmap3,
-  roadmap4,
-  roadmap5,
-  searchMd,
+  projectKubezentry,
+  projectHomelab,
+  projectAwsGovernance,
+  projectObservability,
   git,
-  sliders04,
-  telegram,
-  twitter,
-  yourlogo,
+  iconGithub,
+  iconTwitter,
 } from "../assets";
 
-import card1 from "../assets/benefits/card-1.png";
-import card2 from "../assets/benefits/card-2.png";
-import card3 from "../assets/benefits/card-3.png";
-
-import sfo from "../assets/workExperience/sfo.jpg";
+// Work experience icons
 import sfoTech from "../assets/workExperience/sfo-technologies.png";
 import freelance from "../assets/workExperience/freelance.png";
 import bhooshan from "../assets/workExperience/bhooshan.png";
 import abilytics from "../assets/workExperience/abilytics.png";
 
+// Navigation items for header
 export const navigation = [
   {
     id: "0",
@@ -76,43 +63,10 @@ export const navigation = [
     title: "Resume",
     url: "https://drive.google.com/file/d/1MxrVj-IT5qocipFnd1ejNmTrNIRgdo1R/view?usp=sharing",
   },
-  // {
-  //   id: "4",
-  //   title: "New account",
-  //   url: "#signup",
-  //   onlyMobile: true,
-  // },
-  // {
-  //   id: "5",
-  //   title: "Sign in",
-  //   url: "#login",
-  //   onlyMobile: true,
-  // },
 ];
 
-export const heroIcons = [homeSmile, file02, searchMd, plusSquare];
-
-export const notificationImages = [notification4, notification3, notification2];
-
-export const companyLogos = [yourlogo, yourlogo, yourlogo, yourlogo, yourlogo];
-
-export const brainwaveServices = [
-  "Grafana and Friends Kochi",
-  "CNCF & CNCG Kochi",
-  "AWS UG Kochi",
-  "DevOps Malayalam",
-  "WordPress Kerala",
-];
-
-export const brainwaveServicesIcons = [
-  recording03,
-  recording01,
-  disc02,
-  chromecast,
-  sliders04,
-];
-
-export const roadmap = [
+// Featured projects
+export const projects = [
   {
     id: "0",
     title: "KubeZentry",
@@ -120,7 +74,7 @@ export const roadmap = [
     text: "Developed a platform for streamlined Kubernetes policy management using two powerful policy engines: Kyverno and JsPolicy.",
     category: "K8s SECURITY",
     status: "done",
-    imageUrl: roadmap1,
+    imageUrl: projectKubezentry,
     githubUrl: "https://github.com/aftab-s",
     tech: ["Kubernetes", "Kyverno", "JsPolicy"],
   },
@@ -131,7 +85,7 @@ export const roadmap = [
     text: "Established comprehensive observability for startups and leading team efforts to migrate observability setups for several companies.",
     category: "OBSERVABILITY",
     status: "done",
-    imageUrl: roadmap5,
+    imageUrl: projectObservability,
     githubUrl: "https://github.com/aftab-s",
     tech: ["Grafana", "Prometheus", "Loki"],
   },
@@ -142,7 +96,7 @@ export const roadmap = [
     text: "Built a robust system in AWS to streamline governance, enhance security, and optimize cost management.",
     category: "CLOUD",
     status: "done",
-    imageUrl: roadmap4,
+    imageUrl: projectAwsGovernance,
     githubUrl: "https://github.com/aftab-s",
     tech: ["AWS", "Terraform", "IAM"],
   },
@@ -153,36 +107,23 @@ export const roadmap = [
     text: "Explored Homelab setups with lightweight Kubernetes deployments and implemented robust monitoring solutions.",
     category: "CONTAINERIZATION",
     status: "done",
-    imageUrl: roadmap2,
+    imageUrl: projectHomelab,
     githubUrl: "https://github.com/aftab-s",
     tech: ["Docker", "K3s", "Portainer"],
   },
-  // Add more projects here following the same structure:
-  // {
-  //   id: "4",
-  //   title: "Project Name",
-  //   subtitle: "Short Description",
-  //   text: "Detailed description of the project.",
-  //   category: "CATEGORY",
-  //   status: "done" | "progress",
-  //   imageUrl: yourImage,
-  //   githubUrl: "https://github.com/your-repo",
-  //   tech: ["Tech1", "Tech2", "Tech3"],
-  // },
 ];
 
-export const collabText =
-"Driven by curiosity and a desire to learn, constantly seeking to improve and innovate."
-  export const collabContent = [
-  
-    { id: "0", title: "Infrastructure as Code" },
-    { id: "1", title: "Monitoring and Observability" },
-    { id: "2", title: "Cloud Architecture" },
-    { id: "3", title: "CI/CD Pipelines" },
-    { id: "3", title: "Design" },
-  ];
+// Skills section - core competencies
+export const coreCompetencies = [
+  { id: "0", title: "Infrastructure as Code" },
+  { id: "1", title: "Monitoring and Observability" },
+  { id: "2", title: "Cloud Architecture" },
+  { id: "3", title: "CI/CD Pipelines" },
+  { id: "4", title: "Design" },
+];
 
-export const collabApps = [
+// Skills section - tool icons
+export const techTools = [
   {
     id: "0",
     title: "AWS",
@@ -241,68 +182,33 @@ export const collabApps = [
   },
 ];
 
-export const pricing = [
-  {
-    id: "0",
-    title: "Basic",
-    description: "AI chatbot, personalized recommendations",
-    price: "0",
-    features: [
-      "An AI chatbot that can understand your queries",
-      "Personalized recommendations based on your preferences",
-      "Ability to explore the app and its features without any cost",
-    ],
-  },
-  {
-    id: "1",
-    title: "Premium",
-    description: "Advanced AI chatbot, priority support, analytics dashboard",
-    price: "9.99",
-    features: [
-      "An advanced AI chatbot that can understand complex queries",
-      "An analytics dashboard to track your conversations",
-      "Priority support to solve issues quickly",
-    ],
-  },
-  {
-    id: "2",
-    title: "Enterprise",
-    description: "Custom AI chatbot, advanced analytics, dedicated account",
-    price: null,
-    features: [
-      "An AI chatbot that can understand your queries",
-      "Personalized recommendations based on your preferences",
-      "Ability to explore the app and its features without any cost",
-    ],
-  },
-];
-
-export const benefits = [
+// Certifications
+export const certifications = [
   {
     id: "0",
     title: "Certified Kubernetes Administrator (CKA)",
     text: "The Linux Foundation",
-    backgroundUrl: card1,
-    iconUrl: benefitIcon4,
-    imageUrl: benefitImage5,
+    backgroundUrl: certCard1,
+    iconUrl: certIcon4,
+    imageUrl: certCka,
     url: "https://www.credly.com/badges/4224a580-2651-4669-b1fe-5e0677ee5051/public_url",
   },
   {
     id: "1",
     title: "HashiCorp Certified: Terraform Associate (003)",
     text: "HashiCorp",
-    backgroundUrl: card1,
-    iconUrl: benefitIcon1,
-    imageUrl: benefitImage2,
+    backgroundUrl: certCard1,
+    iconUrl: certIcon1,
+    imageUrl: certTerraform,
     url: "https://www.credly.com/badges/76468702-3a98-4a54-a9a1-d27ebf1d5dc4/public_url",
   },
   {
     id: "2",
     title: "GitHub Foundations",
     text: "GitHub",
-    backgroundUrl: card2,
-    iconUrl: benefitIcon2,
-    imageUrl: benefitImage3,
+    backgroundUrl: certCard2,
+    iconUrl: certIcon2,
+    imageUrl: certGithub,
     url: "https://www.credly.com/badges/749ed6b8-ef36-442c-8792-46f41fd01c3a/public_url",
     light: true,
   },
@@ -310,38 +216,14 @@ export const benefits = [
     id: "3",
     title: "Gremlin Certified: Chaos Engineering Practitioner",
     text: "Gremlin",
-    backgroundUrl: card3,
-    iconUrl: benefitIcon3,
-    imageUrl: benefitImage4,
+    backgroundUrl: certCard3,
+    iconUrl: certIcon3,
+    imageUrl: certGremlin,
     url: "https://www.credential.net/b0603ce1-1771-4455-b5f2-00d57aea7ee5#acc.shi8cyuq",
   },
-  // {
-  //   id: "3",
-  //   title: "Fast responding",
-  //   text: "Lets users quickly find answers to their questions without having to search through multiple sources.",
-  //   backgroundUrl: "./src/assets/benefits/card-4.svg",
-  //   iconUrl: benefitIcon4,
-  //   imageUrl: benefitImage2,
-  //   light: true,
-  // },
-  // {
-  //   id: "4",
-  //   title: "Ask anything",
-  //   text: "Lets users quickly find answers to their questions without having to search through multiple sources.",
-  //   backgroundUrl: "./src/assets/benefits/card-5.svg",
-  //   iconUrl: benefitIcon1,
-  //   imageUrl: benefitImage2,
-  // },
-  // {
-  //   id: "5",
-  //   title: "Improve everyday",
-  //   text: "The app uses natural language processing to understand user queries and provide accurate and relevant responses.",
-  //   backgroundUrl: "./src/assets/benefits/card-6.svg",
-  //   iconUrl: benefitIcon2,
-  //   imageUrl: benefitImage2,
-  // },
 ];
 
+// Work experience timeline
 export const workExperiences = [
   {
     id: "0",
@@ -377,35 +259,36 @@ export const workExperiences = [
   },
 ];
 
+// Social links
 export const socials = [
   {
     id: "0",
     title: "LinkedIn",
-    iconUrl: facebook,
+    iconUrl: iconLinkedin,
     url: "https://www.linkedin.com/in/aftab-s/",
   },
   {
     id: "1",
     title: "GitHub",
-    iconUrl: telegram,
+    iconUrl: iconGithub,
     url: "https://github.com/aftab-s",
   },
   {
     id: "2",
     title: "Instagram",
-    iconUrl: instagram,
+    iconUrl: iconInstagram,
     url: "https://www.instagram.com/devon_clive__/",
   },
   {
     id: "3",
     title: "X",
-    iconUrl: twitter,
+    iconUrl: iconTwitter,
     url: "https://twitter.com/aftab_mehrab",
   },
   {
-  id: "4",
-  title: "Hashnode",
-  iconUrl: discordBlack,
-  url: "https://hashnode.com/@aftabs",
+    id: "4",
+    title: "Hashnode",
+    iconUrl: iconDiscord,
+    url: "https://hashnode.com/@aftabs",
   },
 ];

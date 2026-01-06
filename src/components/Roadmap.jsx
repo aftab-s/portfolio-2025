@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { roadmap } from "../constants";
+import { projects } from "../constants";
 import { GlowingCards, GlowingCard } from "./GlowingCards";
 
 const Roadmap = () => {
@@ -88,7 +88,7 @@ const Roadmap = () => {
           >
             {/* Dot Indicators */}
             <div className="hidden sm:flex items-center gap-2 mr-4">
-              {roadmap.map((_, index) => (
+              {projects.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => scrollToIndex(index)}
@@ -157,7 +157,7 @@ const Roadmap = () => {
                 }
               }}
             >
-              {roadmap.map((project, index) => (
+              {projects.map((project, index) => (
                 <GlowingCard
                   key={project.id}
                   glowColor="#FF98E2"
@@ -290,13 +290,6 @@ const Roadmap = () => {
           </a>
         </motion.div>
       </div>
-
-      {/* Custom CSS for hiding scrollbar */}
-      <style jsx>{`
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-      `}</style>
     </section>
   );
 };

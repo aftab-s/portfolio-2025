@@ -1,40 +1,37 @@
 ﻿import { motion } from "framer-motion";
+import aboutImg from "../assets/about/Aftab S.jpg";
 
 const stats = [
-  { number: "2+", label: "Years Experience" },
-  { number: "10+", label: "Projects Completed" },
+  { number: "3+", label: "Years Experience" },
+  { number: "5+", label: "Projects Completed" },
   { number: "4", label: "Certifications" },
   { number: "5+", label: "Communities" },
 ];
 
-const techStack = [
-  "AWS", "Docker", "Kubernetes", "Terraform", "Prometheus", "Grafana", "Linux", "Python"
-];
-
 const AboutMe = () => {
   return (
-    <section id="about-me" className="py-16 lg:py-20 relative overflow-hidden">
+    <section id="about-me" className="py-20 lg:py-28 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 opacity-[0.015]" style={{
-        backgroundImage: `radial-gradient(circle, rgba(172, 106, 255, 1) 1px, transparent 1px)`,
-        backgroundSize: '30px 30px'
+      <div className="absolute inset-0 opacity-[0.02]" style={{
+        backgroundImage: `radial-gradient(ellipse 80% 50% at 50% -20%, rgba(172, 106, 255, 0.3), transparent)`
       }} />
+      
       <motion.div 
-        animate={{ scale: [1, 1.1, 1], opacity: [0.08, 0.12, 0.08] }}
-        transition={{ duration: 8, repeat: Infinity }}
-        className="absolute top-1/2 left-1/4 w-[300px] md:w-[400px] h-[300px] md:h-[400px] bg-color-1 rounded-full blur-[150px] lg:blur-[180px]" 
+        animate={{ scale: [1, 1.2, 1], opacity: [0.06, 0.1, 0.06] }}
+        transition={{ duration: 10, repeat: Infinity }}
+        className="absolute top-1/4 -left-20 w-[400px] h-[400px] bg-color-1 rounded-full blur-[180px]" 
       />
       
       <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
         {/* Header */}
-        <div className="mb-10 lg:mb-12">
+        <div className="mb-12 lg:mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="inline-flex items-center gap-3 mb-4"
           >
-            <span className="text-xs font-mono tracking-[0.3em] uppercase text-color-1">// About</span>
+            <span className="text-xs font-mono tracking-[0.3em] uppercase text-color-1">// About Me</span>
             <div className="h-px w-16 bg-gradient-to-r from-color-1 to-transparent" />
           </motion.div>
 
@@ -45,112 +42,94 @@ const AboutMe = () => {
             transition={{ delay: 0.1 }}
             className="text-3xl md:text-4xl lg:text-5xl font-semibold text-n-1"
           >
-            Building the <span className="text-transparent bg-clip-text bg-gradient-to-r from-color-1 to-color-5">Future</span>
+            Crafting <span className="text-transparent bg-clip-text bg-gradient-to-r from-color-1 to-color-5">Cloud-Native</span> Solutions
           </motion.h2>
         </div>
 
-        {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-[1.2fr_1fr] gap-8 lg:gap-12">
-          {/* Left - Bio */}
+        {/* Bento Grid Layout */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          
+          {/* Profile Card - Spans 2 columns and 2 rows on large screens */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="space-y-6"
+            transition={{ delay: 0.1 }}
+            className="col-span-2 row-span-2 relative group"
           >
-            <div className="p-6 sm:p-8 bg-n-8/70 border border-n-6/40 rounded-2xl">
-              <div className="space-y-4 text-n-3 leading-relaxed text-sm sm:text-base">
-                <p>
-                  Hi! I'm <span className="text-n-1 font-medium">Aftab</span>, a DevOps Engineer passionate about cloud-native technologies and building scalable infrastructure.
-                </p>
-                <p>
-                  Beyond code, I organize <span className="text-transparent bg-clip-text bg-gradient-to-r from-color-1 to-color-5 font-medium">Grafana and Friends Kochi</span>, contribute to 
-                  <span className="text-n-1 font-medium"> AWS UG Kochi</span> & <span className="text-n-1 font-medium">CNCF Kochi</span>, and speak at tech events sharing real-world insights.
-                </p>
-              </div>
-              
-              {/* Tech Stack Pills */}
-              <div className="mt-6 pt-6 border-t border-n-6/40">
-                <p className="text-xs text-n-4 uppercase tracking-wider mb-3">Tech Stack</p>
-                <div className="flex flex-wrap gap-2">
-                  {techStack.map((tech, index) => (
-                    <motion.span
-                      key={tech}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.3 + index * 0.05 }}
-                      className="px-3 py-1.5 text-xs bg-n-7/80 border border-n-6/50 rounded-lg text-n-3 hover:border-color-1/40 hover:text-color-1 transition-all duration-300"
-                    >
-                      {tech}
-                    </motion.span>
-                  ))}
+            <div className="h-full p-6 lg:p-8 bg-n-8/80 border border-n-6/40 rounded-2xl hover:border-color-1/30 transition-all duration-300">
+              <div className="flex flex-col h-full">
+                {/* Profile Section */}
+                <div className="flex items-center gap-5 mb-6">
+                  <div className="relative flex-shrink-0">
+                    <img
+                      src={aboutImg}
+                      alt="Aftab S"
+                      className="w-20 h-20 lg:w-24 lg:h-24 rounded-2xl object-cover border border-n-6/50"
+                    />
+                    <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-color-4 rounded-full border-2 border-n-8" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl lg:text-3xl font-semibold text-n-1 mb-1">Aftab S</h3>
+                    <p className="text-sm text-transparent bg-clip-text bg-gradient-to-r from-color-1 to-color-5 font-medium">DevOps Engineer</p>
+                    <div className="flex items-center gap-2 text-xs text-n-4 mt-2">
+                      <span className="w-2 h-2 bg-color-4 rounded-full animate-pulse" />
+                      Available for opportunities
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bio */}
+                <div className="flex-1 space-y-4 text-n-3 text-sm lg:text-base leading-relaxed">
+                  <p>
+                    I specialize in designing and implementing <span className="text-n-1 font-medium">cloud infrastructure</span>, 
+                    <span className="text-n-1 font-medium"> CI/CD pipelines</span>, and 
+                    <span className="text-n-1 font-medium"> observability solutions</span> that help teams ship faster and more reliably.
+                  </p>
+                  <p>
+                    Beyond engineering, I'm deeply involved in the tech community - organizing meetups, 
+                    speaking at conferences, and contributing to open-source projects.
+                  </p>
+                </div>
+
+                {/* Bottom accent */}
+                <div className="mt-6 pt-4 border-t border-n-6/30 flex items-center gap-4">
+                  <div className="flex -space-x-2">
+                    {["bg-color-1", "bg-color-5", "bg-color-2"].map((color, i) => (
+                      <div key={i} className={`w-6 h-6 rounded-full ${color} opacity-60 border-2 border-n-8`} />
+                    ))}
+                  </div>
+                  <span className="text-xs text-n-5">Cloud • DevOps • Observability</span>
                 </div>
               </div>
             </div>
+          </motion.div>
 
-            {/* Quick Links */}
+          {/* Stats Cards */}
+          {stats.map((stat, index) => (
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-3"
+              transition={{ delay: 0.2 + index * 0.1 }}
+              className="relative group"
             >
-              <a
-                href="#projects"
-                className="group flex-1 inline-flex items-center justify-center gap-3 px-5 py-3 bg-n-8/60 border border-n-6/50 rounded-xl hover:border-color-1/40 transition-all duration-300"
-              >
-                <span className="text-sm text-n-1 font-medium group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-color-1 group-hover:to-color-5 transition-all">View Projects</span>
-                <svg className="w-4 h-4 text-n-4 group-hover:text-color-1 group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
-              <a
-                href="#contact"
-                className="group flex-1 inline-flex items-center justify-center gap-3 px-5 py-3 bg-n-8/60 border border-n-6/50 rounded-xl hover:border-color-1/40 transition-all duration-300"
-              >
-                <span className="text-sm text-n-1 font-medium group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-color-1 group-hover:to-color-5 transition-all">Let's Connect</span>
-                <svg className="w-4 h-4 text-n-4 group-hover:text-color-1 group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
-            </motion.div>
-          </motion.div>
-
-          {/* Right - Stats Grid */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="grid grid-cols-2 gap-3 sm:gap-4 content-start"
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4 + index * 0.1 }}
-                className="group relative p-5 sm:p-6 bg-n-8/70 border border-n-6/40 rounded-2xl hover:border-color-1/40 transition-all duration-300 overflow-hidden"
-              >
-                {/* Gradient Accent */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-color-1 to-color-5 opacity-60" />
+              <div className="h-full p-6 bg-n-8/80 border border-n-6/40 rounded-2xl hover:border-color-1/30 transition-all duration-300 flex flex-col justify-center">
+                {/* Top accent line */}
+                <div className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl bg-gradient-to-r from-color-1 to-color-5 opacity-50" />
                 
-                {/* Hover Glow */}
-                <div className="absolute inset-0 bg-gradient-to-br from-color-1/5 to-color-5/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                
-                <div className="relative text-center">
-                  <div className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-color-1 to-color-5 mb-2">
+                <div className="text-center">
+                  <div className="text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-color-1 to-color-5 mb-2">
                     {stat.number}
                   </div>
-                  <div className="text-[10px] sm:text-xs text-n-4 uppercase tracking-wider leading-tight">{stat.label}</div>
+                  <div className="text-xs text-n-4 uppercase tracking-wider">
+                    {stat.label}
+                  </div>
                 </div>
-              </motion.div>
-            ))}
-          </motion.div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

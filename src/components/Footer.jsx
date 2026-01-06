@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useForm, ValidationError } from "@formspree/react";
 import { socials } from "../constants";
-import logo from "../assets/AM-logo.png";
+import { logo } from "../assets";
 
 const Footer = () => {
   const [state, handleSubmit] = useForm("xbdlojrg");
@@ -116,6 +116,7 @@ const Footer = () => {
                       name="name"
                       placeholder="Your Name"
                       required
+                      autoComplete="name"
                       className="relative w-full px-5 py-3.5 bg-n-8/60 backdrop-blur-xl border border-n-6/50 rounded-xl text-sm text-n-1 placeholder-n-4 focus:outline-none focus:border-color-1/50 focus:bg-n-8/80 transition-all duration-300"
                     />
                   </div>
@@ -126,6 +127,7 @@ const Footer = () => {
                       name="email"
                       placeholder="Your Email"
                       required
+                      autoComplete="email"
                       className="relative w-full px-5 py-3.5 bg-n-8/60 backdrop-blur-xl border border-n-6/50 rounded-xl text-sm text-n-1 placeholder-n-4 focus:outline-none focus:border-color-1/50 focus:bg-n-8/80 transition-all duration-300"
                     />
                     <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-400 text-xs mt-1.5" />

@@ -14,134 +14,121 @@ const Footer = () => {
       setTimeout(() => setShowSuccess(false), 5000);
     }
   }, [state.succeeded]);
+
   return (
-    <footer id="contact" className="py-16 lg:py-24 relative overflow-hidden">
-      {/* Futuristic background */}
-      <div className="absolute inset-0">
-        {/* Dot matrix */}
-        <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: `radial-gradient(circle, rgba(172, 106, 255, 1) 1px, transparent 1px)`,
-          backgroundSize: '30px 30px'
-        }} />
-        
-        {/* Horizontal scan lines */}
-        <div className="absolute inset-0 opacity-[0.02]" style={{
-          backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(172, 106, 255, 0.1) 2px, rgba(172, 106, 255, 0.1) 4px)`,
-        }} />
-      </div>
+    <footer id="contact" className="relative overflow-hidden">
+      {/* Subtle background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-t from-n-8 via-n-8/95 to-transparent pointer-events-none" />
       
-      {/* Gradient blobs */}
-      <motion.div 
-        animate={{ 
-          scale: [1, 1.2, 1],
-          opacity: [0.1, 0.2, 0.1]
-        }}
-        transition={{ duration: 8, repeat: Infinity }}
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] md:w-[600px] lg:w-[800px] h-[200px] md:h-[300px] lg:h-[400px] bg-gradient-to-r from-color-1 to-color-5 rounded-full blur-[150px] lg:blur-[200px]" 
-      />
-      
+      {/* Top accent line */}
+      <div className="h-px bg-gradient-to-r from-transparent via-n-6/50 to-transparent" />
+
       <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
-        <div className="max-w-4xl mx-auto">
-          {/* CTA Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative p-6 sm:p-8 lg:p-12 xl:p-16 bg-gradient-to-br from-n-7/60 to-n-8/80 backdrop-blur-xl border border-n-6/40 rounded-2xl sm:rounded-3xl overflow-hidden mb-12 lg:mb-16"
-          >
-            {/* Corner accents */}
-            <svg className="absolute top-0 left-0 w-32 h-32 text-color-1/20" viewBox="0 0 100 100">
-              <path d="M0 30 L0 0 L30 0" fill="none" stroke="currentColor" strokeWidth="1" />
-            </svg>
-            <svg className="absolute bottom-0 right-0 w-32 h-32 text-color-5/20 rotate-180" viewBox="0 0 100 100">
-              <path d="M0 30 L0 0 L30 0" fill="none" stroke="currentColor" strokeWidth="1" />
-            </svg>
-            
-            {/* Circuit patterns */}
-            <svg className="absolute top-8 right-8 w-40 h-40 text-n-6/10" viewBox="0 0 100 100">
-              <path d="M10 50 L40 50 L50 30 L60 50 L90 50" fill="none" stroke="currentColor" strokeWidth="1" />
-              <path d="M50 10 L50 30" fill="none" stroke="currentColor" strokeWidth="1" />
-              <path d="M50 50 L50 70 L30 90" fill="none" stroke="currentColor" strokeWidth="1" />
-              <path d="M50 70 L70 90" fill="none" stroke="currentColor" strokeWidth="1" />
-              <circle cx="50" cy="50" r="4" fill="currentColor" />
-            </svg>
-            
-            <div className="relative z-10 text-center">
+        {/* Main content area */}
+        <div className="py-20 lg:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+            {/* Left side - Contact info */}
+            <div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="inline-flex items-center gap-3 mb-6"
+                className="inline-flex items-center gap-2 sm:gap-3 mb-8"
               >
-                <div className="h-px w-8 bg-gradient-to-r from-transparent to-color-1" />
-                <span className="text-xs font-mono tracking-[0.3em] uppercase text-color-1">// Contact</span>
-                <div className="h-px w-8 bg-gradient-to-l from-transparent to-color-1" />
+                <span className="text-[10px] sm:text-xs font-mono tracking-[0.2em] sm:tracking-[0.3em] uppercase text-color-1">// Get in touch</span>
+                <div className="h-px w-6 sm:w-8 bg-gradient-to-l from-transparent to-color-1" />
               </motion.div>
-              
+
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-n-1 mb-4 sm:mb-6"
+                className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-n-1 mb-6 leading-tight"
               >
-                Let's Work <span className="text-transparent bg-clip-text bg-gradient-to-r from-color-1 to-color-5">Together</span>
+                Let's build<br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-color-1 to-color-5">something great</span>
               </motion.h2>
-              
+
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="text-n-3 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto mb-8 sm:mb-10 px-2 sm:px-0"
+                className="text-n-4 text-base lg:text-lg max-w-md mb-10"
               >
-                Have a project in mind or just want to chat? I'm always open to discussing new opportunities.
+                Have a project in mind or just want to connect? I'm always open to new opportunities.
               </motion.p>
-              
-              {/* Contact Form */}
-              <motion.form
-                onSubmit={handleSubmit}
+
+              {/* Quick links */}
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="max-w-2xl mx-auto space-y-5 sm:space-y-6"
+                className="flex flex-wrap gap-3"
               >
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-                  <div className="relative group">
-                    <div className="absolute inset-0 bg-gradient-to-r from-color-1 to-color-5 rounded-xl opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-300" />
+                {socials.map((social, index) => (
+                  <motion.a
+                    key={social.id}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.4 + index * 0.05 }}
+                    whileHover={{ y: -2 }}
+                    className="px-4 py-2 text-sm text-n-3 border border-n-6/50 rounded-lg hover:text-color-1 hover:border-color-1/30 transition-all duration-300"
+                  >
+                    {social.title}
+                  </motion.a>
+                ))}
+              </motion.div>
+            </div>
+
+            {/* Right side - Contact form */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-mono text-n-4 mb-2 tracking-wider">NAME</label>
                     <input
                       type="text"
                       name="name"
-                      placeholder="Your Name"
                       required
                       autoComplete="name"
-                      className="relative w-full px-5 py-3.5 bg-n-8/60 backdrop-blur-xl border border-n-6/50 rounded-xl text-sm text-n-1 placeholder-n-4 focus:outline-none focus:border-color-1/50 focus:bg-n-8/80 transition-all duration-300"
+                      className="w-full px-0 py-3 bg-transparent border-b border-n-6 text-n-1 placeholder-n-5 focus:outline-none focus:border-color-1 transition-colors duration-300"
+                      placeholder="John Doe"
                     />
                   </div>
-                  <div className="relative group">
-                    <div className="absolute inset-0 bg-gradient-to-r from-color-1 to-color-5 rounded-xl opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-300" />
+                  <div>
+                    <label className="block text-xs font-mono text-n-4 mb-2 tracking-wider">EMAIL</label>
                     <input
                       type="email"
                       name="email"
-                      placeholder="Your Email"
                       required
                       autoComplete="email"
-                      className="relative w-full px-5 py-3.5 bg-n-8/60 backdrop-blur-xl border border-n-6/50 rounded-xl text-sm text-n-1 placeholder-n-4 focus:outline-none focus:border-color-1/50 focus:bg-n-8/80 transition-all duration-300"
+                      className="w-full px-0 py-3 bg-transparent border-b border-n-6 text-n-1 placeholder-n-5 focus:outline-none focus:border-color-1 transition-colors duration-300"
+                      placeholder="john@example.com"
                     />
                     <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-400 text-xs mt-1.5" />
                   </div>
                 </div>
-                
-                <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-color-1 to-color-5 rounded-xl opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-300" />
+
+                <div>
+                  <label className="block text-xs font-mono text-n-4 mb-2 tracking-wider">MESSAGE</label>
                   <textarea
                     name="message"
-                    placeholder="Your Message"
                     required
                     rows="5"
-                    className="relative w-full px-5 py-3.5 bg-n-8/60 backdrop-blur-xl border border-n-6/50 rounded-xl text-sm text-n-1 placeholder-n-4 focus:outline-none focus:border-color-1/50 focus:bg-n-8/80 transition-all duration-300 resize-none"
+                    className="w-full px-0 py-3 bg-transparent border-b border-n-6 text-n-1 placeholder-n-5 focus:outline-none focus:border-color-1 transition-colors duration-300 resize-none"
+                    placeholder="Tell me about your project..."
                   />
                   <ValidationError prefix="Message" field="message" errors={state.errors} className="text-red-400 text-xs mt-1.5" />
                 </div>
@@ -149,13 +136,13 @@ const Footer = () => {
                 <button
                   type="submit"
                   disabled={state.submitting}
-                  className="group inline-flex items-center justify-center w-full gap-3 px-5 py-3 bg-n-8/60 border border-n-6/50 rounded-xl hover:border-color-1/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="group inline-flex items-center gap-3 px-5 py-3 bg-n-8/60 border border-n-6/50 rounded-xl hover:border-color-1/40 transition-all duration-300 w-full sm:w-auto justify-center mt-6 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <span className="text-sm font-medium text-n-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-color-1 group-hover:to-color-5 transition-all duration-300">
+                  <span className="text-sm text-n-1 font-medium group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-color-1 group-hover:to-color-5 transition-all">
                     {state.submitting ? "Sending..." : "Send Message"}
                   </span>
                   {!state.submitting && (
-                    <svg className="w-4 h-4 text-n-4 group-hover:text-color-1 group-hover:translate-x-1 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-4 h-4 text-n-4 group-hover:text-color-1 group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                   )}
@@ -166,69 +153,45 @@ const Footer = () => {
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="flex items-center gap-3 px-5 py-3.5 bg-color-4/10 backdrop-blur-xl border border-color-4/30 rounded-xl"
+                    className="flex items-center gap-3 px-4 py-3 bg-color-4/10 border border-color-4/30 rounded-lg"
                   >
                     <svg className="w-5 h-5 text-color-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-sm text-color-4">Message sent! I'll get back to you soon.</span>
+                    <span className="text-sm text-color-4">Message sent successfully!</span>
                   </motion.div>
                 )}
-              </motion.form>
-            </div>
-          </motion.div>
+              </form>
+            </motion.div>
+          </div>
+        </div>
 
-          {/* Divider with gradient */}
-          <div className="h-px bg-gradient-to-r from-transparent via-n-6 to-transparent mb-12" />
-
-          {/* Bottom section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-col items-center gap-6 sm:gap-8 md:flex-row md:justify-between"
-          >
-            {/* Logo/Name */}
-            <a href="#hero" className="group flex items-center">
-              <img src={logo} alt="AM Logo" className="h-10 sm:h-12 w-auto group-hover:opacity-80 transition-opacity" />
-            </a>
-
-            {/* Social links */}
-            <div className="flex items-center gap-3 sm:gap-4">
-              {socials.map((social, index) => (
-                <motion.a
-                  key={social.id}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  initial={{ opacity: 0, scale: 0 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ scale: 1.1, y: -3 }}
-                  className="group relative w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center"
-                  title={social.title}
-                >
-                  {/* Glow effect */}
-                  <div className="absolute inset-0 rounded-xl bg-color-1/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  
-                  {/* Icon container */}
-                  <div className="relative w-full h-full rounded-xl bg-n-8 border border-n-6/50 flex items-center justify-center group-hover:border-color-1/50 transition-all duration-300">
-                    <img
-                      src={social.iconUrl}
-                      alt={social.title}
-                      className="w-4 h-4 sm:w-5 sm:h-5 opacity-60 group-hover:opacity-100 transition-opacity"
-                    />
-                  </div>
-                </motion.a>
-              ))}
-            </div>
+        {/* Bottom bar */}
+        <div className="py-8 border-t border-n-6/30">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            {/* Logo/Brand */}
+            <motion.a
+              href="#hero"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="flex items-center gap-2 group"
+            >
+              <img src={logo} alt="AM Logo" className="h-9 w-auto transition-all duration-500 group-hover:scale-110 brightness-110" />
+            </motion.a>
 
             {/* Copyright */}
-            <p className="text-n-4 text-xs sm:text-sm font-mono text-center">
-              © {new Date().getFullYear()} <span className="text-n-3">Aftab</span> All rights reserved.
-            </p>
-          </motion.div>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="text-n-5 text-sm font-mono"
+            >
+              © {new Date().getFullYear()} All rights reserved
+            </motion.p>
+
+            {/* Back to top removed per design request */}
+          </div>
         </div>
       </div>
     </footer>

@@ -129,35 +129,29 @@ const Header = () => {
                     transition={{ delay: 0.3 + index * 0.05 }}
                     className="relative group"
                   >
-                    <div className={`relative px-5 py-2.5 rounded-xl transition-all duration-300 ${
+                      <div className={`relative px-5 py-2.5 transition-all duration-300 ${
                       isActive 
-                        ? 'text-color-1 bg-color-1/10 backdrop-blur-sm' 
+                        ? 'text-color-1' 
                         : 'text-n-3 hover:text-n-1'
-                    }`}>
-                      {/* Glassmorphic background on hover */}
-                      <div className={`absolute inset-0 rounded-xl transition-all duration-300 ${
-                        isActive 
-                          ? 'bg-gradient-to-br from-color-1/10 via-color-5/5 to-transparent border border-color-1/30 opacity-100' 
-                          : 'bg-n-7/30 backdrop-blur-md border border-n-6/30 opacity-0 group-hover:opacity-100'
-                      }`} />
-                      
-                      {/* Active indicator with smooth transition */}
+                      }`}>
+                      <span className="relative z-10 text-[13px] font-medium font-mono tracking-wider uppercase">
+                        {item.title}
+                      </span>
+
+                      {/* subtle hover underline (expands on hover) */}
+                      <div className="absolute left-1/2 -translate-x-1/2 bottom-1 w-0 h-1 rounded-full bg-gradient-to-r from-color-1 via-color-5 to-color-1 transition-all duration-300 group-hover:w-8" />
+
+                      {/* Active indicator: centered gradient line */}
                       {isActive && (
                         <motion.div
                           layoutId="navActiveSection"
-                          className="absolute inset-0 rounded-xl"
+                          className="absolute left-4 right-4 bottom-1 h-1 rounded-full"
                           style={{
-                            background: 'linear-gradient(135deg, rgba(172, 106, 255, 0.15), rgba(133, 141, 255, 0.1))',
+                            background: 'linear-gradient(90deg, #AC6AFF, #FFC876, #FF98E2, #7ADB78, #858DFF)'
                           }}
                           transition={{ type: "spring", bounce: 0.15, duration: 0.5 }}
                         />
                       )}
-                      
-                      <span className="relative z-10 text-[13px] font-medium font-mono tracking-wider uppercase">
-                        {item.title}
-                      </span>
-                      
-                      {/* Animated underline */}
                       <motion.div 
                         className={`absolute bottom-1 left-1/2 -translate-x-1/2 h-0.5 bg-gradient-to-r from-color-1 via-color-5 to-color-1 transition-all duration-300 ${
                           isActive ? 'w-1/2 opacity-100' : 'w-0 opacity-0 group-hover:w-1/3 group-hover:opacity-70'

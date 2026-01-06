@@ -77,6 +77,9 @@ const ScrollToTop = () => {
             <defs>
               <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="#AC6AFF" />
+                <stop offset="25%" stopColor="#FFC876" />
+                <stop offset="50%" stopColor="#FF98E2" />
+                <stop offset="75%" stopColor="#7ADB78" />
                 <stop offset="100%" stopColor="#858DFF" />
               </linearGradient>
             </defs>

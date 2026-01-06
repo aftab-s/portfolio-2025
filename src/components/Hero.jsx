@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { socials } from "../constants";
 import RaysBackground from "./RaysBackground";
 import AuroraTextEffect from "./AuroraTextEffect";
 import { useState, useEffect } from "react";
@@ -143,40 +142,6 @@ const Hero = () => {
                 </svg>
               </a>
               
-            </motion.div>
-            
-            {/* Social Links */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="flex items-center justify-center lg:justify-start gap-3 sm:gap-4"
-            >
-              {socials.map((social, index) => (
-                <motion.a
-                  key={social.id}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.6 + index * 0.1 }}
-                  whileHover={{ scale: 1.1, y: -3 }}
-                  className="group relative w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center"
-                >
-                  {/* Glow effect */}
-                  <div className="absolute inset-0 rounded-xl bg-color-1/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  
-                  {/* Icon container */}
-                  <div className="relative w-full h-full rounded-xl bg-n-8 border border-n-6/50 flex items-center justify-center group-hover:border-color-1/50 transition-all duration-300">
-                    <img
-                      src={social.iconUrl}
-                      alt={social.title}
-                      className="w-4 h-4 sm:w-5 sm:h-5 opacity-60 group-hover:opacity-100 transition-opacity"
-                    />
-                  </div>
-                </motion.a>
-              ))}
             </motion.div>
           </div>
 

@@ -166,12 +166,4 @@ npm run preview
 
 ## License
 
-Include your license information here (e.g., MIT) or leave it blank if private.
-
-
----
-
-If you'd like, I can also:
-- Add a short CONTRIBUTING.md or PR template
-- Add example entries showing how to add a new project/cert/photo with code snippets
-- Add a minimal deployment guide for Vercel/Netlify with screenshots
+NA

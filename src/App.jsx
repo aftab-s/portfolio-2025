@@ -1,35 +1,30 @@
-import ButtonGradient from "./assets/svg/ButtonGradient";
-import AboutMe from "./components/AboutMe";
-import Benefits from "./components/Benefits";
-import Collaboration from "./components/Collaboration";
-import WorkExperience from "./components/WorkExperience";
-import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import Pricing from "./components/Pricing";
+import AboutMe from "./components/AboutMe";
+import Collaboration from "./components/Collaboration";
+import WorkExperience from "./components/WorkExperience";
 import Roadmap from "./components/Roadmap";
-import Services from "./components/Services";
-import ArrowUp from "./components/ArrowUp";
+import Benefits from "./components/Benefits";
+import BeyondWork from "./components/BeyondWork";
+import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {
   return (
-    <>
-      <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
-        <Header />
+    <div className="min-h-screen bg-n-8 text-n-1 overflow-hidden">
+      <Header />
+      <main>
         <Hero />
-        <ArrowUp />
         <AboutMe />
         <Collaboration />
         <WorkExperience />
         <Roadmap />
         <Benefits />
-        <Services /> 
-        <Pricing />
-        <Footer />
-      </div>
-
-      <ButtonGradient />
-    </>
+        <BeyondWork />
+      </main>
+      <Footer />
+      <ScrollToTop />
+    </div>
   );
 };
 

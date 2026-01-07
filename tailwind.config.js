@@ -35,9 +35,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["var(--font-sora)", ...fontFamily.sans],
-        code: "var(--font-code)",
-        grotesk: "var(--font-grotesk)",
+        sans: ["var(--font-inter)", "var(--font-sora)", ...fontFamily.sans],
+        display: ["var(--font-sora)", ...fontFamily.sans],
       },
       letterSpacing: {
         tagline: ".15em",
@@ -70,6 +69,28 @@ export default {
         "radial-gradient": "radial-gradient(var(--tw-gradient-stops))",
         "conic-gradient":
           "conic-gradient(from 225deg, #FFC876, #79FFF7, #9F53FF, #FF98E2, #FFC876)",
+      },
+      animation: {
+        'rotate-rays-1': 'rotateRays1 10s linear infinite',
+        'rotate-rays-2': 'rotateRays2 6s linear 10s infinite',
+        'color-rays': 'colorRays 5.5s linear infinite, colorRaysReverse 8s linear infinite',
+        'color-rays-reverse': 'colorRaysReverse 80s linear infinite',
+      },
+      keyframes: {
+        rotateRays1: {
+          'to': { transform: 'rotate(360deg)' },
+        },
+        rotateRays2: {
+          'to': { transform: 'rotate(-360deg)' },
+        },
+        colorRays: {
+          '0%': { filter: 'hue-rotate(0deg) blur(9px)' },
+          '100%': { filter: 'hue-rotate(360deg) blur(9px)' },
+        },
+        colorRaysReverse: {
+          '0%': { transform: 'rotate(360deg)' },
+          '100%': { transform: 'rotate(0deg)' },
+        },
       },
     },
   },
@@ -112,14 +133,14 @@ export default {
           "@apply text-sm": {},
         },
         ".tagline": {
-          "@apply font-grotesk font-light text-xs tracking-tagline uppercase":
+          "@apply font-light text-xs tracking-tagline uppercase":
             {},
         },
         ".quote": {
-          "@apply font-code text-lg leading-normal": {},
+          "@apply text-lg leading-normal": {},
         },
         ".button": {
-          "@apply font-code text-xs font-bold uppercase tracking-wider": {},
+          "@apply text-xs font-bold uppercase tracking-wider": {},
         },
       });
       addUtilities({

@@ -65,7 +65,7 @@ const Collaboration = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.25 }}
-            href="https://drive.google.com/file/d/1n-2w7eN4t50LWtJmu8ZzJEAtE4MUVpeA/view?usp=sharing"
+            href="https://drive.google.com/file/d/1pB-n78-NIRiaPeDrXm8kT5rbiiXoObCO/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 text-sm text-n-3 hover:text-color-1 transition-colors duration-150"

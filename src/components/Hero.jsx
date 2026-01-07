@@ -26,8 +26,8 @@ const Hero = () => {
       <RaysBackground
         theme="dark"
         animated={true}
-        animationSpeed={1}
-        opacity={0.7}
+        animationSpeed={0.3}
+        opacity={0.5}
         colors={{
           purple: '#AC6AFF',
           yellow: '#FFC876',
@@ -35,7 +35,7 @@ const Hero = () => {
           teal: '#7ADB78',
           blue: '#858DFF',
         }}
-        blurAmount={6}
+        blurAmount={4}
       />
       
       <div className="container relative z-10 px-6 md:px-12 lg:px-20">

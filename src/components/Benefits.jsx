@@ -3,10 +3,13 @@ import { motion } from "framer-motion";
 import { certifications } from "../constants";
 import { GlowingCards, GlowingCard } from "./GlowingCards";
 
+// Duplicate certifications for infinite scroll
+const infiniteCertifications = [...certifications, ...certifications, ...certifications];
+
 const Benefits = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const carouselRef = useRef(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollLeft, setCanScrollLeft] = useState(true);
   const [canScrollRight, setCanScrollRight] = useState(true);
 
   const checkScrollability = () => {
@@ -24,6 +27,39 @@ const Benefits = () => {
       carousel.addEventListener('scroll', checkScrollability);
       return () => carousel.removeEventListener('scroll', checkScrollability);
     }
+  }, []);
+
+  // Handle infinite scroll reset
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    if (!carousel) return;
+
+    const handleInfiniteScroll = () => {
+      const cardWidth = 260 + 16; // w-[240px sm:w-[260px] + gap
+      const totalWidth = infiniteCertifications.length * cardWidth;
+      const sectionWidth = certifications.length * cardWidth;
+
+      if (carousel.scrollLeft > sectionWidth * 1.5) {
+        carousel.scrollLeft = carousel.scrollLeft - sectionWidth;
+      } else if (carousel.scrollLeft < sectionWidth * 0.5) {
+        carousel.scrollLeft = carousel.scrollLeft + sectionWidth;
+      }
+    };
+
+    const scrollListener = () => {
+      handleInfiniteScroll();
+      checkScrollability();
+    };
+
+    carousel.addEventListener('scroll', scrollListener);
+    
+    // Set initial scroll position to middle section
+    setTimeout(() => {
+      const cardWidth = 260 + 16;
+      carousel.scrollLeft = certifications.length * cardWidth;
+    }, 100);
+
+    return () => carousel.removeEventListener('scroll', scrollListener);
   }, []);
 
   const scroll = (direction) => {
@@ -54,10 +90,8 @@ const Benefits = () => {
       <div className="absolute inset-0 opacity-[0.03]" style={{
         backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(172, 106, 255, 0.1) 40px, rgba(172, 106, 255, 0.1) 41px)`
       }} />
-      <motion.div 
-        animate={{ y: [0, -30, 0], opacity: [0.1, 0.15, 0.1] }}
-        transition={{ duration: 10, repeat: Infinity }}
-        className="absolute top-1/2 left-0 w-[600px] h-[300px] bg-color-1 rounded-full blur-[200px]" 
+      <div 
+        className="absolute top-1/2 left-0 w-[600px] h-[300px] bg-color-1 rounded-full blur-[60px] opacity-[0.12]" 
       />
       
       <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
@@ -90,7 +124,7 @@ const Benefits = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex items-center gap-3"
+            className="hidden sm:flex items-center gap-3"
           >
             {/* Dot Indicators */}
             <div className="hidden sm:flex items-center gap-2 mr-4">
@@ -139,11 +173,6 @@ const Benefits = () => {
 
         {/* Carousel Container */}
         <div className="relative">
-          {/* Left Gradient Fade */}
-          <div className={`absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-n-8 to-transparent z-10 pointer-events-none transition-opacity duration-300 ${canScrollLeft ? 'opacity-100' : 'opacity-0'}`} />
-          
-          {/* Right Gradient Fade */}
-          <div className={`absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-n-8 to-transparent z-10 pointer-events-none transition-opacity duration-300 ${canScrollRight ? 'opacity-100' : 'opacity-0'}`} />
           
           {/* Scrollable Carousel */}
           <GlowingCards
@@ -164,9 +193,9 @@ const Benefits = () => {
                 }
               }}
             >
-              {certifications.map((cert, index) => (
+              {infiniteCertifications.map((cert, index) => (
                 <GlowingCard
-                  key={cert.id}
+                  key={`cert-${index}`}
                   glowColor="#AC6AFF"
                   className="flex-shrink-0 w-[240px] sm:w-[260px]"
                 >
@@ -233,13 +262,13 @@ const Benefits = () => {
           viewport={{ once: true }}
           className="flex justify-center mt-8"
         >
-          <div className="inline-flex items-center gap-6 px-5 py-3 bg-n-8/60 border border-n-6/50 rounded-xl">
-            <div className="flex items-center gap-2">
+          <div className="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-6 px-4 sm:px-5 py-2.5 sm:py-3 bg-n-8/60 border border-n-6/50 rounded-xl whitespace-nowrap">
+            <div className="flex items-center gap-2 whitespace-nowrap">
               <div className="w-2 h-2 rounded-full bg-color-4 animate-pulse" />
-              <span className="text-sm text-n-3">{certifications.length} Certifications</span>
+              <span className="text-xs sm:text-sm text-n-3">{certifications.length} Certifications</span>
             </div>
-            <div className="w-px h-4 bg-n-6" />
-            <span className="text-xs text-n-4 font-mono">Verified & Industry Recognized</span>
+            <div className="hidden sm:block w-px h-4 bg-n-6" />
+            <span className="hidden sm:inline text-xs text-n-4 font-mono">Verified & Industry Recognized</span>
           </div>
         </motion.div>
       </div>

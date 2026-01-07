@@ -78,10 +78,8 @@ const Services = () => {
       <div className="absolute inset-0 opacity-[0.015]" style={{
         backgroundImage: `conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(172, 106, 255, 0.3) 60deg, transparent 120deg)`,
       }} />
-      <motion.div 
-        animate={{ rotate: 360 }}
-        transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] md:w-[600px] lg:w-[800px] h-[500px] md:h-[600px] lg:h-[800px] bg-gradient-conic from-color-1/10 via-transparent to-color-5/10 rounded-full blur-[80px] lg:blur-[100px] opacity-50" 
+      <div 
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] md:w-[600px] lg:w-[800px] h-[500px] md:h-[600px] lg:h-[800px] bg-gradient-conic from-color-1/10 via-transparent to-color-5/10 rounded-full blur-[40px] opacity-50" 
       />
       
       <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">

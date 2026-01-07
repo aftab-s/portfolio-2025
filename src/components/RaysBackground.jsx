@@ -62,7 +62,8 @@ const RaysBackground = ({
               margin: '-100vmax',
               width: '200vmax',
               height: '200vmax',
-              opacity: 0.45,
+              opacity: 0.35,
+              willChange: 'transform',
               background: `
                 conic-gradient(
                   from 20deg at 50% 50%,
@@ -136,7 +137,8 @@ const RaysBackground = ({
               margin: '-100vmax',
               width: '200vmax',
               height: '200vmax',
-              opacity: 0.45,
+              opacity: 0.35,
+              willChange: 'transform',
               background: `
                 conic-gradient(
                   from 0deg at 50% 50%,
@@ -233,6 +235,7 @@ const RaysBackground = ({
               height: '100%',
               top: 0,
               left: 0,
+              willChange: 'filter',
               background: `conic-gradient(
                 from 90deg at 50% 50%,
                 ${colors.purple},
@@ -263,6 +266,7 @@ const RaysBackground = ({
               height: '100%',
               top: '-1.5%',
               left: 0,
+              willChange: 'transform',
               background: `conic-gradient(
                 from 90deg at 50% 50%,
                 ${colors.purple},

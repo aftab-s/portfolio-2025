@@ -14,15 +14,11 @@ const WorkExperience = () => {
         backgroundImage: `linear-gradient(rgba(172, 106, 255, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(172, 106, 255, 0.5) 1px, transparent 1px)`,
         backgroundSize: '60px 60px'
       }} />
-      <motion.div 
-        animate={{ scale: [1, 1.2, 1], opacity: [0.06, 0.1, 0.06] }}
-        transition={{ duration: 10, repeat: Infinity }}
-        className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-color-1 rounded-full blur-[200px]" 
+      <div 
+        className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-color-1 rounded-full blur-[60px] opacity-[0.08]" 
       />
-      <motion.div 
-        animate={{ scale: [1.2, 1, 1.2], opacity: [0.04, 0.08, 0.04] }}
-        transition={{ duration: 12, repeat: Infinity }}
-        className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-color-5 rounded-full blur-[180px]" 
+      <div 
+        className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-color-5 rounded-full blur-[60px] opacity-[0.06]" 
       />
 
       <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">

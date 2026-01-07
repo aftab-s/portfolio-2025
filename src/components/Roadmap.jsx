@@ -3,11 +3,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { projects } from "../constants";
 import { GlowingCards, GlowingCard } from "./GlowingCards";
 
+// Duplicate projects for infinite scroll
+const infiniteProjects = [...projects, ...projects, ...projects];
+
 const Roadmap = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const carouselRef = useRef(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollLeft, setCanScrollLeft] = useState(true);
   const [canScrollRight, setCanScrollRight] = useState(true);
 
   const checkScrollability = () => {
@@ -25,6 +28,39 @@ const Roadmap = () => {
       carousel.addEventListener('scroll', checkScrollability);
       return () => carousel.removeEventListener('scroll', checkScrollability);
     }
+  }, []);
+
+  // Handle infinite scroll reset
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    if (!carousel) return;
+
+    const handleInfiniteScroll = () => {
+      const cardWidth = 350 + 16; // w-[320px sm:w-[350px] + gap
+      const totalWidth = infiniteProjects.length * cardWidth;
+      const sectionWidth = projects.length * cardWidth;
+
+      if (carousel.scrollLeft > sectionWidth * 1.5) {
+        carousel.scrollLeft = carousel.scrollLeft - sectionWidth;
+      } else if (carousel.scrollLeft < sectionWidth * 0.5) {
+        carousel.scrollLeft = carousel.scrollLeft + sectionWidth;
+      }
+    };
+
+    const scrollListener = () => {
+      handleInfiniteScroll();
+      checkScrollability();
+    };
+
+    carousel.addEventListener('scroll', scrollListener);
+    
+    // Set initial scroll position to middle section
+    setTimeout(() => {
+      const cardWidth = 350 + 16;
+      carousel.scrollLeft = projects.length * cardWidth;
+    }, 100);
+
+    return () => carousel.removeEventListener('scroll', scrollListener);
   }, []);
 
   const scroll = (direction) => {
@@ -84,7 +120,7 @@ const Roadmap = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex items-center gap-3"
+            className="hidden sm:flex items-center gap-3"
           >
             {/* Dot Indicators */}
             <div className="hidden sm:flex items-center gap-2 mr-4">
@@ -133,11 +169,6 @@ const Roadmap = () => {
 
         {/* Carousel Container */}
         <div className="relative">
-          {/* Left Gradient Fade */}
-          <div className={`absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-n-8 to-transparent z-10 pointer-events-none transition-opacity duration-300 ${canScrollLeft ? 'opacity-100' : 'opacity-0'}`} />
-          
-          {/* Right Gradient Fade */}
-          <div className={`absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-n-8 to-transparent z-10 pointer-events-none transition-opacity duration-300 ${canScrollRight ? 'opacity-100' : 'opacity-0'}`} />
           
           {/* Scrollable Carousel */}
           <GlowingCards
@@ -157,9 +188,9 @@ const Roadmap = () => {
                 }
               }}
             >
-              {projects.map((project, index) => (
+              {infiniteProjects.map((project, index) => (
                 <GlowingCard
-                  key={project.id}
+                  key={`project-${index}`}
                   glowColor="#FF98E2"
                   className="flex-shrink-0 w-[320px] sm:w-[350px]"
                 >

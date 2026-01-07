@@ -19,7 +19,7 @@ const AboutMe = () => {
       <motion.div 
         animate={{ scale: [1, 1.2, 1], opacity: [0.06, 0.1, 0.06] }}
         transition={{ duration: 10, repeat: Infinity }}
-        className="absolute top-1/4 -left-20 w-[400px] h-[400px] bg-color-1 rounded-full blur-[180px]" 
+        className="absolute top-1/4 -left-20 w-[400px] h-[400px] bg-color-1 rounded-full blur-[60px]" 
       />
       
       <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">

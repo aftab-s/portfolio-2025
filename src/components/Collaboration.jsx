@@ -38,9 +38,10 @@ const Collaboration = () => {
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
           <div>
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.25 }}
               className="inline-flex items-center gap-3 mb-4"
             >
               <span className="text-xs font-mono tracking-[0.3em] uppercase text-color-1">// Skills</span>
@@ -48,10 +49,10 @@ const Collaboration = () => {
             </motion.div>
 
             <motion.h2
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
+              transition={{ duration: 0.25, delay: 0.05 }}
               className="text-3xl md:text-4xl lg:text-5xl font-semibold text-n-1"
             >
               Tech <span className="text-transparent bg-clip-text bg-gradient-to-r from-color-1 to-color-5">Arsenal</span>
@@ -60,13 +61,14 @@ const Collaboration = () => {
 
           {/* Resume Link */}
           <motion.a
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.25 }}
             href="https://drive.google.com/file/d/1n-2w7eN4t50LWtJmu8ZzJEAtE4MUVpeA/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 text-sm text-n-3 hover:text-color-1 transition-colors"
+            className="group inline-flex items-center gap-2 text-sm text-n-3 hover:text-color-1 transition-colors duration-150"
           >
             <span>View Full Resume</span>
             <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">

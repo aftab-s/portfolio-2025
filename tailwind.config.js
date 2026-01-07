@@ -71,10 +71,10 @@ export default {
           "conic-gradient(from 225deg, #FFC876, #79FFF7, #9F53FF, #FF98E2, #FFC876)",
       },
       animation: {
-        'rotate-rays-1': 'rotateRays1 10s linear infinite',
-        'rotate-rays-2': 'rotateRays2 6s linear 10s infinite',
-        'color-rays': 'colorRays 5.5s linear infinite, colorRaysReverse 8s linear infinite',
-        'color-rays-reverse': 'colorRaysReverse 80s linear infinite',
+        'rotate-rays-1': 'rotateRays1 120s linear infinite',
+        'rotate-rays-2': 'rotateRays2 100s linear 10s infinite',
+        'color-rays': 'colorRays 60s linear infinite',
+        'color-rays-reverse': 'colorRaysReverse 180s linear infinite',
       },
       keyframes: {
         rotateRays1: {
@@ -84,8 +84,8 @@ export default {
           'to': { transform: 'rotate(-360deg)' },
         },
         colorRays: {
-          '0%': { filter: 'hue-rotate(0deg) blur(9px)' },
-          '100%': { filter: 'hue-rotate(360deg) blur(9px)' },
+          '0%': { filter: 'hue-rotate(0deg)' },
+          '100%': { filter: 'hue-rotate(360deg)' },
         },
         colorRaysReverse: {
           '0%': { transform: 'rotate(360deg)' },

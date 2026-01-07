@@ -61,7 +61,7 @@ export const navigation = [
   {
     id: "4",
     title: "Resume",
-    url: "https://drive.google.com/file/d/1MxrVj-IT5qocipFnd1ejNmTrNIRgdo1R/view?usp=sharing",
+    url: "https://drive.google.com/file/d/1pB-n78-NIRiaPeDrXm8kT5rbiiXoObCO/view?usp=sharing",
   },
 ];
 
